@@ -1,0 +1,38 @@
+.icon-circle {
+	width: 35px; 
+	height: 35px; 
+	line-height: 35px;
+}
+
+.backend-search-input {
+	border-top-right-radius: 0 !important; 
+	border-bottom-right-radius: 0 !important;
+}
+
+.backend-search-button {
+	border-top-left-radius: 0 !important; 
+	border-bottom-left-radius: 0 !important;
+	height: 45px;
+}
+
+.backend-search-button:hover {
+	opacity: 0.5;
+}
+
+.actions-icon {
+	width: 15px;
+	height: 15px;
+	line-height: 15px;
+}
+
+.icon-wrap {
+	width: 48px; 
+	height: 48px; 
+	line-height: 48px;
+}
+
+.panel-icons {
+	width: 45px; 
+	height: 45px;
+	line-height: 45px;
+}
