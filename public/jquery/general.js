@@ -8,23 +8,14 @@
         inputs.attr('autocomplete', 'off');
     });
 
-    $(window).on('load', function() {
-        localStorage.clear();
-        var preloader = $('.preloader');
-        if (preloader.length) {
-            preloader.delay(200).fadeOut(500);
-        }
-    });
-
     $('.custom-file-input').change(function(event){
         if (typeof(event.target.files[0].name) !== 'null') {
             $('.custom-file-label').html(event.target.files[0].name);
         } 
     });
 
-    $('.hanburger-icon').on('click', function() {
-        $('.navbar-menu').toggleClass('navbar-toggle');
-        $('.hanburger-icon').toggleClass('slide');
+    $('.stop-propergation').click(function(event){
+        event.stopPropagation();
     });
 
     backendLinksNavigation();

@@ -10,20 +10,6 @@ class Help {
 		return ["NGN", "USD", "EUR"];
 	}
 
-    public static function redirect($location) {
-        if (!headers_sent()) {
-            header('Location: '.DOMAIN.$location);
-        }else {
-            echo '<script type="text/javascript">';
-            echo 'window.location.href="'.DOMAIN.$location.'";';
-            echo '</script>';
-            echo '<noscript>';
-            echo '<meta http-equiv="refresh" content="0;url='.$location.'" />';
-            echo '</noscript>';
-            exit;
-        }
-    }
-
 	public static function getCryptoCurrencies() {
 		return ["BTC" => "Bitcoin", "BCH" => "Bitcoin Cash", "LTC" => "Litecoin", "ETH" => "Ether", "TRX" => "TRON", "LTCT" => "Litecoin Testnet"];
 	}
@@ -44,6 +30,10 @@ class Help {
 			return $string.$dots;
 		}
         return $string;
+	}
+
+	public static function getDaysOfTheWeek() {
+		return ["1" => "monday", "2" => "tuesday", "3" => "wednesday", "4" => "thursday", "5" => "friday", "6" => "saturday", "7" => "sunday"];
 	}
 
 	public static function timeAgo($timestamp){
@@ -161,6 +151,10 @@ class Help {
 			$countOfWeeks ++;
 		}
 		return $countOfWeeks;
+	}
+
+	public static function formatTime($time = "") {
+		return (empty($time) || $time === "") ? date("G:ia") : date("G:ia", strtotime($time));
 	}
 
 	public static function getGenders() {

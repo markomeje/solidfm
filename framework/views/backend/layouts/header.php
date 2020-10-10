@@ -20,19 +20,16 @@
     <link rel="icon" type="image/png" href="<?= PUBLIC_URL; ?>/images/favicon.ico">
     <link rel="manifest" href="<?= PUBLIC_URL; ?>/images/favicon/site.webmanifest">
     <!-- SITE TITLE -->
-    <title><?= isset($title) ? $title : SOFWARE_NAME; ?></title>
+    <title><?= isset($title) ? $title : "Solid100.9 FM"; ?></title>
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" type="text/css" href="<?= PUBLIC_URL ;?>/bootstrap/bootstrap.min.css">
     <!-- General CSS -->
     <link rel="stylesheet" type="text/css" href="<?= PUBLIC_URL ;?>/css/general.css">
     <!-- summernote CSS -->
     <link rel="stylesheet" type="text/css" href="<?= PUBLIC_URL ;?>/summernote/summernote-bs4.min.css">
-    <!-- Chart CSS -->
-    <link rel="stylesheet" type="text/css" href="<?= PUBLIC_URL ;?>/chartjs/chart.min.css">
     <!-- Homepage CSS -->
     <link rel="stylesheet" type="text/css" href="<?= PUBLIC_URL ;?>/css/backend.css">
     <!-- ico font css -->
     <link rel="stylesheet" type="text/css" href="<?= PUBLIC_URL ;?>/fonts/icofont/icofont.min.css">
 </head>
 <body>
-<div class="preloader bg-dark"></div>

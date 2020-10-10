@@ -28,7 +28,6 @@
 		<script src="<?= PUBLIC_URL; ?>/components/soundmanager/script/soundmanager2-nodebug.js"></script>
 		<script src="<?= PUBLIC_URL; ?>/components/soundmanager/script/shoutcast.js"></script>
 		<script src="<?= PUBLIC_URL; ?>/components/soundmanager/templates/qtradio-player/script/qt-360player-volumecontroller.js"></script>
-
 		<!-- Popup -->
 		<script src="<?= PUBLIC_URL; ?>/components/popup/popup.js"></script>
 		<!-- MAIN JAVASCRIPT FILE ================================ -->

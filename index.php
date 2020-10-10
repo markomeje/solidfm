@@ -1,14 +1,5 @@
 <?php
 
-
-/**
- * twice a day for resident 
- * Report bonus for xray only 10%
- * Using price list
- * 4 groups xray, scan. lab. ecg . . . 
- * 
- */
-
 date_default_timezone_set("Africa/Lagos");
 /**
  * ROOT - Thats the root of server filesystem eg "C:/xampp/htdocs/herium".
@@ -41,6 +32,7 @@ require ROOT . DS . "vendor" . DS . "autoload.php";
 | Highly recommended for security purposes
 |
 */
+
 $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__, ".env");
 $dotenv->load();
 $dotenv->required(["LIVE_DATABASE_HOST", "LIVE_DATABASE_NAME", "LIVE_DATABASE_USERNAME", "LIVE_DATABASE_PASSWORD", "LIVE_DATABASE_CHARSET"]);
@@ -59,18 +51,6 @@ Application\Library\Session::start();
 
 /*
 |--------------------------------------------------------------------------
-| Tracking visitors and users devices and browsers
-|--------------------------------------------------------------------------
-|
-| To prepare for some UI/UX changes and features
-|
-*/
-$result = new WhichBrowser\Parser(getallheaders(), ["detectBots" => false]);
-$visitor = ["browserName" => $result->browser->getName(), "operationSystemName" => $result->os->getName(), "operationSystemVersion" => $result->os->getVersion(), "browserVersion" => $result->browser->getVersion(), "deviceType" => $result->device->type];
-
-
-/*
-|--------------------------------------------------------------------------
 | Register Error & Exception handlers
 |--------------------------------------------------------------------------
 |
@@ -81,9 +61,6 @@ $visitor = ["browserName" => $result->browser->getName(), "operationSystemName" 
 if (ENVIROMENT === "production") {
 	Application\Core\Handler::register();
 }
-
-
-
 
 /**
  * Routing the application using the url parameter from the .htaccess file

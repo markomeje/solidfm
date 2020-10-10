@@ -375,7 +375,7 @@
 	/* Function to go back in history 
 	===================================================*/
 	window.goBack = function(e) {
-		var defaultLocation = "http://www.mysite.com";
+		var defaultLocation = "http://www.solidfmradio.com";
 		var oldHash = window.location.hash;
 
 		history.back(); // Try to go back

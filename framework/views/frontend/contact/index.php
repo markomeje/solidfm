@@ -39,46 +39,7 @@
 	                                        <h5><a href="#map">Map</a></h5></li>
 	                                </ul>
 	                                <div id="form" class="row">
-	                                    <form class="col s12" method="post" action="javascript:;">
-	                                        <input type="hidden" name="antispam" value="x123">
-	                                        <h3 class="left-align qt-vertical-padding-m">Send a message using the form below</h3>
-	                                        <div class="row">
-	                                            <div class="input-field col s6">
-	                                                <input name="first_name" id="first_name" type="text" class="validate">
-	                                                <label>First Name</label>
-	                                            </div>
-	                                            <div class="input-field col s6">
-	                                                <input name="last_name" id="last_name" type="text" class="validate">
-	                                                <label>Last Name</label>
-	                                            </div>
-	                                        </div>
-	                                        <div class="row">
-	                                            <div class="input-field col s12">
-	                                                <input name="email" id="formemail" type="email" class="validate">
-	                                                <label>Email</label>
-	                                            </div>
-	                                        </div>
-	                                        <div class="row">
-	                                            <div class="input-field col s12">
-	                                                <textarea name="message" id="message" class="materialize-textarea" maxlength="300"></textarea>
-	                                                <label for="message">Message</label>
-	                                            </div>
-	                                        </div>
-	                                        <div class="row">
-	                                            <div class="input-field col s12">
-	                                                <input name="privacy" type="checkbox" id="privacy" value="1" />
-	                                                <label>I red and accept the <a href="#" target="_blank">privacy terms</a>.</label>
-	                                            </div>
-	                                        </div>
-	                                        <hr class="qt-spacer-s hide-on-med-and-up">
-	                                        <div class="row">
-	                                            <div class="input-field col s12">
-	                                                <button class="qt-btn qt-btn-l qt-btn-primary qt-spacer-m waves-effect waves-light" type="submit" name="action">
-	                                                    <span class="lnr lnr-rocket"></span> Submit
-	                                                </button>
-	                                            </div>
-	                                        </div>
-	                                    </form>
+	                                    <?php require FRONTEND_PATH . DS . "contact" . DS . "partials" . DS . "form.php"; ?>
 	                                </div>
 	                                <div id="contacts" class="row qt-contacts">
 	                                    <div class="col s12">

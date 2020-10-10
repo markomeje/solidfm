@@ -2,6 +2,7 @@
 
 namespace Framework\Controllers;
 use Application\Core\{View, Controller};
+use Framework\Models\{Adverts, News};
 
 
 class DashboardController extends Controller {
@@ -11,6 +12,6 @@ class DashboardController extends Controller {
 	}
 
 	public function index() {
-		View::render("backend", "dashboard/index", ["backendLinks" => $this->backendLinks, "activeController" => $this->activeController]);
+		View::render("backend", "dashboard/index", ["backendLinks" => $this->backendLinks, "activeController" => $this->activeController, "allAdvertsCount" => Adverts::getAllAdvertsCount(), "allNewsCount" => News::getAllNewsCount()]);
 	}
 }

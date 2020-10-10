@@ -55,7 +55,7 @@ class Upcomings extends Model {
             $pagination = Pagination::paginate("SELECT * FROM {$table}", [], $pageNumber);
             $offset = $pagination->getOffset();
             $limit = $pagination->itemsPerPage;
-            $database->prepare("SELECT * FROM {$table} LIMIT {$limit} OFFSET {$offset}");
+            $database->prepare("SELECT * FROM {$table} ORDER BY time ASC LIMIT {$limit} OFFSET {$offset}");
             $database->execute();
             return ["allUpcomings" => $database->fetchAll(), "pagination" => $pagination];
         } catch (Exception $error) {

@@ -1,5 +1,6 @@
 <!-- Modal -->
-<div class="modal fade" id="edit-news-<?= empty($news->id) ? 0 : $news->id; ?>" tabindex="-1" role="dialog" aria-hidden="true">
+<?php $id = empty($news->id) ? 0 : $news->id; ?>
+<div class="modal fade" id="edit-news-<?= $id ?>" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content border-raduis-lg">
             <div class="modal-header bg-light">
@@ -8,7 +9,7 @@
                     <i class="icofont-close text-danger"></i>
                 </div>
             </div>
-            <form method="POST" action="javascript:;" class="edit-news-form" data-action="<?= DOMAIN; ?>/news/editNews/<?= empty($news->id) ? 0 : $news->id; ?>">
+            <form method="POST" action="javascript:;" class="edit-news-form" data-action="<?= DOMAIN; ?>/archive/editNews/<?= $id; ?>">
                 <div class="modal-body">
                     <div class="form-row">
                         <div class="form-group input-group-lg col-md-6">
@@ -18,7 +19,7 @@
                         </div>
                         <div class="form-group input-group-lg col-md-6">
                             <label class="text-muted">Category</label>
-                            <select class="custom-select form-control category">
+                            <select class="custom-select form-control category" name="category">
                                 <option value="">Select category</option>
                                 <?php if(empty($categoriesList)): ?>
                                     <option value="">No categories yet</option>
@@ -30,7 +31,7 @@
                                     <?php endforeach; ?>
                                 <?php endif; ?>
                             </select>
-                            <small class="error presenter-error text-danger"></small>
+                            <small class="error category-error text-danger"></small>
                         </div>
                     </div>
                     <div class="form-row">
@@ -42,7 +43,7 @@
                     </div>
                     <div class="form-group">
                         <label class="text-muted">Content</label>
-                        <textarea class="form-control" id="edit-news-content-<?= empty($news->id) ? 0 : $news->id; ?>"><?= empty($news->content) ? "No Content" : $news->content; ?></textarea>
+                        <textarea class="form-control" name="content" id="edit-news-content-<?= empty($news->id) ? 0 : $news->id; ?>"><?= empty($news->content) ? "No Content" : $news->content; ?></textarea>
                     </div>
                 </div>
                 <div class="modal-footer border-top-orange">

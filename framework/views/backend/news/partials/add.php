@@ -8,7 +8,7 @@
                     <i class="icofont-close text-danger"></i>
                 </div>
             </div>
-            <form method="POST" action="javascript:;" class="add-news-form" data-action="<?= DOMAIN; ?>/news/addNews" enctype="multipart/form-data">
+            <form method="POST" action="javascript:;" class="add-news-form" data-action="<?= DOMAIN; ?>/archive/addNews" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="form-row">
                         <div class="form-group input-group-lg col-md-6">

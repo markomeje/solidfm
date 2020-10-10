@@ -3,6 +3,7 @@
 namespace Application\Library;
 use Application\Library\Generate;
 use Application\Core\Logger;
+use \Exception;
 
  /**
   * Uploader Class
@@ -47,8 +48,12 @@ class Uploader {
         return $data;
     }
 
-    public static function fileExists($path){
-       return (file_exists($path) && is_file($path)) ? true : false;
+    public static function fileExists($file){
+       return (file_exists($file) && is_file($file)) ? true : false;
+    }
+
+    public static function deleteFile($file){
+        return self::fileExists($file) && unlink($file);
     }
 
     private static function mime($file){
@@ -89,12 +94,12 @@ class Uploader {
 
     public static function upload($file, $path, $width, $height) {
         if(!move_uploaded_file($file["tmp_name"], $path)){
-            throw new \Exception("Error Uploading file");
+            throw new Exception("Error Uploading file");
         }elseif(!chmod($path, 0644)) {
-            throw new \Exception("Upload Permission Error");
+            throw new Exception("Upload Permission Error");
         }else {
             $gumlet = new \Gumlet\ImageResize($path);
-            $gumlet->resizeToBestFit($width, $height);
+            $gumlet->resize($width, $height, $allow_enlarge = True);
             $gumlet->save($path);
         }
     }

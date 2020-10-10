@@ -1,6 +1,8 @@
 <?php
 
 namespace Application\Core;
+use Application\Core\Logger;
+use \ErrorException;
 
  /**
   * Handler class.
@@ -44,7 +46,7 @@ class Handler{
         if (!in_array($error['type'], $fatals, true)) {
             return;
         }
-        self::exception(new \ErrorException($error['message'], 0, $error['type'], $error['file'], $error['line']));
+        self::exception(new ErrorException($error['message'], 0, $error['type'], $error['file'], $error['line']));
     }
 
     /**
@@ -54,7 +56,7 @@ class Handler{
      * @throws ErrorException
      */
     public static function error($error, $message, $file, $line, $vars){
-        throw new \ErrorException($message, 0, $error, $file, $line);
+        throw new ErrorException($message, 0, $error, $file, $line);
     }
 
     /**

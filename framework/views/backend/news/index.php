@@ -35,12 +35,14 @@
 					</div>
 					<div class="d-flex">
 						<a href="javascript:;" class="btn bg-dark text-white">
-							<i class="icofont-caret-down"></i>
-						</a>
-						<a href="javascript:;" class="btn bg-dark ml-3 text-white">
-							<small class="text-danger">
-								<i class="icofont-ui-delete"></i>
-							</small>
+							<div class="dropdown">
+								<div data-toggle="dropdown">
+									<i class="icofont-caret-down"></i>
+									<div class="dropdown-menu dropdown-menu-right">
+										<div class="dropdown-item">Delete all</div>
+									</div>
+								</div>
+							</div>
 						</a>
 					</div>
 				</div>

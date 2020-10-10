@@ -4,10 +4,10 @@
 <script src="<?= PUBLIC_URL; ?>/bootstrap/popper.min.js" type="text/javascript"></script>
 <!-- Bootstrap JS -->
 <script src="<?= PUBLIC_URL; ?>/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+<!-- youtube-->
+<script src="<?= PUBLIC_URL; ?>/jquery/youtube.js" type="text/javascript"></script>
 <!-- USER LOGIN -->
 <script src="<?= PUBLIC_URL; ?>/jquery/login.js" type="text/javascript"></script>
-<!-- CKEDITOR-->
-<script src="<?= PUBLIC_URL; ?>/ckeditor/ckeditor.js" type="text/javascript"></script>
 <!-- general-->
 <script src="<?= PUBLIC_URL; ?>/jquery/general.js" type="text/javascript"></script>
 <!-- news-->
@@ -16,16 +16,26 @@
 <script src="<?= PUBLIC_URL; ?>/summernote/summernote-bs4.min.js" type="text/javascript"></script>
 <!-- upcomings-->
 <script src="<?= PUBLIC_URL; ?>/jquery/upcomings.js" type="text/javascript"></script>
+<!-- adverts-->
+<script src="<?= PUBLIC_URL; ?>/jquery/adverts.js" type="text/javascript"></script>
 <!-- categories-->
 <script src="<?= PUBLIC_URL; ?>/jquery/categories.js" type="text/javascript"></script>
+<!-- programmes-->
+<script src="<?= PUBLIC_URL; ?>/jquery/programmes.js" type="text/javascript"></script>
+<!-- titles-->
+<script src="<?= PUBLIC_URL; ?>/jquery/titles.js" type="text/javascript"></script>
 <script type="text/javascript">
-	var addNews = $('#add-news-content');
-	if (addNews) {
-		addNews.summernote({
-	        tabsize: 4,
-	        height: 300
-	    });
-	}
+	<?php $textareas = ["add-news-content" => ["height" => 300]]; ?>
+	<?php foreach($textareas as $area => $value): ?>
+		var areaInput = $('#<?= $area; ?>');
+		if (areaInput) {
+			areaInput.summernote({
+		        tabsize: 4,
+		        height: <?= isset($value["height"]) ? $value["height"] : 200; ?>
+		    });
+		}
+	<?php endforeach; ?>
+
 	<?php if(isset($allNews)): ?>
 		<?php foreach($allNews as $news): ?>
 	        var editPackage = $('#edit-news-content-<?= empty($news->id) ? 0 : $news->id; ?>');

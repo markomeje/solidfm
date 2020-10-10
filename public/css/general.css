@@ -131,18 +131,16 @@ h6 {
 /** Customize Switch */
 
 .custom-checkbox .custom-switch .custom-control-input::after {
-    border: 1px solid #2D641F !important;
+    border: 1px solid #6c757d !important;
 }
 
 .custom-switch .custom-control-input:checked~.custom-control-label::before {
-    background-image: -o-linear-gradient(left bottom, #253b5b, #184884, #0054ad, #085ed7, #2D641F) !important;
-    background-image: -webkit-gradient(linear, left bottom, right top, from(#253b5b), color-stop(#184884), color-stop(#0054ad), color-stop(#085ed7), to(#2D641F)) !important;
-    background-image: linear-gradient(to right top, #253b5b, #184884, #0054ad, #085ed7, #2D641F) !important;
+    background-color: #28a745 !important;
     border: 1px solid #2D641F;
 }
 
 .custom-switch .custom-control-input:checked~.custom-control-label::after {
-    border: 1px solid #2D641F;
+    border: 1px solid #6c757d;
 }
 
 .custom-switch .custom-control-input:checked:focus~.custom-control-label::before {
@@ -156,32 +154,20 @@ h6 {
 }
 
 .custom-switch .custom-control-input:focus~.custom-control-label::before {
-    border: 1px solid #2D641F;
+    border: 1px solid #6c757d;
 }
 
 .custom-switch .custom-control-input:active~.custom-control-label::before {
     background-color: transparent;
-    border: 1px solid #2D641F;
+    border: 1px solid #6c757d;
 }
 
 .custom-switch .custom-control-label::after {
-    background-color: #2D641F;
+    background-color: #6c757d;
 }
 
 .custom-switch .custom-control-label::before {
-    border: 1px solid #2D641F;
-}
-
-.preloader {
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: 999999;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-image: url(../images/banners/preloader.svg);
+    border: 1px solid #6c757d;
 }
 
 .container-fluid {

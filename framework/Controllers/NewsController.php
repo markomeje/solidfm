@@ -2,7 +2,7 @@
 
 namespace Framework\Controllers;
 use Application\Core\{View, Controller};
-use Framework\Models\{News, Categories};
+use Framework\Models\{News, Categories, Upcomings};
 
 
 class NewsController extends Controller {
@@ -12,22 +12,16 @@ class NewsController extends Controller {
 	}
 
 	public function index($pageNumber = 0) {
+		$allUpcomings = Upcomings::getAllUpcomings($pageNumber);
 		$allNews = News::getAllNews($pageNumber);
-		View::render("backend", "news/index", ["backendLinks" => $this->backendLinks, "activeController" => $this->activeController, "searchQuery" => self::get("query"), "allNews" => $allNews["allNews"], "pagination" => $allNews["pagination"], "categoriesList" => Categories::getCategoriesList()]);
+		View::render("frontend", "news/index", ["title" => "News | Solid100.9FM", "allNews" => $allNews["allNews"], "pagination" => $allNews["pagination"], "recentNews" => $allNews["allNews"][0], "allUpcomings" => $allUpcomings["allUpcomings"]]);
 	}
 
-	public function addNews() {
-		if ($this->isAjaxRequest()) {
-			$response = News::addNews();
-			$this->jsonEncode($response);
-		}
-	}
-
-	public function editNews($id) {
-		if ($this->isAjaxRequest()) {
-			$response = News::editNews($id);
-			$this->jsonEncode($response);
-		}
+	public function read($id, $pageNumber = 0) {
+		$allNews = News::getAllNews($pageNumber);
+		$allUpcomings = Upcomings::getAllUpcomings($pageNumber);
+		$singleNews = News::getNewsById($id);
+		View::render("frontend", "news/read", ["singleNews" => $singleNews, "recentNews" => $allNews["allNews"][0], "allNews" => $allNews["allNews"], "allUpcomings" => $allUpcomings["allUpcomings"], "newsId" => $id]);
 	}
 
 }

@@ -2,7 +2,7 @@
 
 namespace Framework\Models;
 use Application\Core\{Model, Logger};
-use Application\Library\{Validate, Uploader, Database};
+use Application\Library\{Validate, Database};
 use Framework\Models\Components\Pagination;
 
 

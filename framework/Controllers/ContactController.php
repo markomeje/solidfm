@@ -1,7 +1,8 @@
 <?php
 
 namespace Framework\Controllers;
-use Application\Core\{Controller, View, Help};
+use Application\Core\{Controller, View};
+use Framework\Models\Contact;
 
 class ContactController extends Controller {
 
@@ -10,7 +11,9 @@ class ContactController extends Controller {
 	}
 
 	public function index() {
-		View::render("frontend", "contact/index", ["title" => "Contact", "countries" => Help::getAllCountries(), "controller" => $this->controller, "frontendLinks" => $this->frontendLinks]);
+		$response = Contact::request();
+		$validationMessage = $this->isPostRequest() ? $response["status"] : "";
+		View::render("frontend", "contact/index", ["title" => "Contact", "controller" => $this->controller, "frontendLinks" => $this->frontendLinks, "validationMessage" => $validationMessage]);
 	}
 
 }
