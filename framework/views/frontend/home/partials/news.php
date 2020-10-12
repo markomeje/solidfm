@@ -19,7 +19,7 @@
 								<div class="qt-header-mid qt-vc">
 									<div class="qt-vi">
 										<h3 class="qt-title">
-											<a href="#" class="qt-text-shadow">
+											<a href="<?= DOMAIN; ?>/news/read/<?= empty($news->id) ? 0 : $news->id; ?>" class="qt-text-shadow">
 											    <?= empty($news->title) ? 0 : Application\Core\Help::limitStringLength($news->title); ?>
 											</a>
 										</h3>

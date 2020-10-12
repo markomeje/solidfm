@@ -32,43 +32,40 @@
 			</div>
 		<?php endif; ?>
 	</div>
-	<?php if(empty($allUpcomings)): ?>
-		<h5 class="qt-caption-small"><span>Upcoming shows</span></h5>
+	<?php if(empty($allUpcomingProgrammes)): ?>
+		<div class="col s12 m3 l12">
+			<h5 class="qt-caption-small"><span>No Upcoming shows</span></h5>
+		</div>
 	<?php else: ?>
-		<?php $nextThreeShows = (count($allUpcomings) > 3) ? array_slice($allUpcomings, 0, 3) : $allUpcomings; ?>
 		<div class="col s12 m3 l12">
 			<div class="qt-widget">
 				<h5 class="qt-caption-small"><span>Upcoming shows</span></h5>
-				<?php foreach($nextThreeShows as $upcoming): ?>
+				<?php foreach($allUpcomingProgrammes as $upcoming): ?>
 					<ul class="qt-widget-upcoming">
 						<li class="qt-card-s paper">
 							<h5><?= empty($upcoming->presenter) ? "No Presenter" : $upcoming->presenter; ?></h5>
 							<p>
-								<?= empty($upcoming->time) ? "00:00" : strtoupper($upcoming->time); ?>
+								<?= empty($upcoming->starts) ? "00:00" : strtoupper(Application\Core\Help::formatTime($upcoming->starts)); ?>
 							</p>
-							<img src="<?= PUBLIC_URL; ?>/images/upcomings/<?= empty($upcoming->image) ? 'default.jpg' : $upcoming->image; ?>" alt="Show cover" width="200" height="110" class="right">
 						</li>
 					</ul>
 				<?php endforeach; ?>
 			</div>
 		</div>
 	<?php endif; ?>
-	<?php if(empty($aderts)): ?>
-			<div class="col s12 m3 l12">
-			   <h5 class="qt-caption-small"><span>No Adverts</span></h5>
-			</div>
+	<?php if(empty($allActiveAdverts)): ?>
 	<?php else: ?>
-		<?php foreach($adverts as $advert): ?>
-			<div class="col s12 m3 l12">
-				<div class="qt-widget">
-					<h5 class="qt-caption-small"><span>Sponsor</span></h5>
-					<div class="qt-widget-sponsor qt-card">
-						<a href="#sponsorlink" target="_blank" rel="nofollow">
-							<img src="<?= PUBLIC_URL; ?>/imagestemplate/sponsor.png" alt="Sponsor" width="235" height="132">
+		<div class="col s12 m3 l12">
+			<div class="qt-widget">
+				<h5 class="qt-caption-small"><span>Current Adverts</span></h5>
+				<?php foreach($allActiveAdverts as $advert): ?>
+					<div class="qt-widget-sponsor qt-card" style="margin-bottom: 25px;">
+						<a href="javascript:;" rel="nofollow">
+							<img src="<?= PUBLIC_URL; ?>/images/adverts/<?= empty($advert->image) ? 'default.jpg' : $advert->image; ?>" alt="Sponsor" width="235" height="132">
 						</a>
 					</div>
-				</div>
+				<?php endforeach; ?>
 			</div>
-		<?php endforeach; ?>
+		</div>
 	<?php endif; ?>
 </div>

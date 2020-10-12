@@ -22,26 +22,30 @@
         });
 
         request.done(function(response){
-        	if (typeof response === 'undefined' || typeof response === 'null') {
+        	if (response === null) {
         		handleButton(button, spinner);
                 message.removeClass('d-none alert-success').addClass('alert-danger');
                 message.html('An error occured. Try again.').fadeIn();
 
-        	}else if (response.status === 'invalid-year') {
+        	}else if (response.status === 'invalid-starts') {
                 handleButton(button, spinner);
-                handleErrors($('.year'), $('.year-error'), 'Programme year is required');
+                handleErrors($('.starts'), $('.starts-error'), 'Programme starting time is required');
 
-            }else if (response.status === 'invalid-time') {
+            }else if (response.status === 'invalid-ends') {
                 handleButton(button, spinner);
-                handleErrors($('.time'), $('.time-error'), 'Programme time is required');
+                handleErrors($('.ends'), $('.ends-error'), 'Programme ending time is required');
 
-            }else if (response.status === 'invalid-synopsis') {
+            }else if (response.status === 'invalid-presenter') {
                 handleButton(button, spinner);
-                handleErrors($('.synopsis'), $('.synopsis-error'), 'Programme synopsis is required');
+                handleErrors($('.presenter'), $('.presenter-error'), 'Programme presenter is required');
 
             }else if (response.status === 'invalid-title') {
                 handleButton(button, spinner);
                 handleErrors($('.title'), $('.title-error'), 'Programme title is required');
+
+            }else if (response.status === 'invalid-description') {
+                handleButton(button, spinner);
+                handleErrors($('.description'), $('.description-error'), 'Programme description is required');
 
             } else if (response.status === 'success') {
                 handleButton(button, spinner);
@@ -85,22 +89,30 @@
         });
 
         request.done(function(response){
-            if (typeof response === 'undefined' || typeof response === 'null') {
+            if (response === null) {
                 handleButton(button, spinner);
                 message.removeClass('d-none alert-success').addClass('alert-danger');
                 message.html('An error occured. Try again.').fadeIn();
 
-            }else if (response.status === 'invalid-name') {
+            }else if (response.status === 'invalid-starts') {
                 handleButton(button, spinner);
-                handleErrors($('.name'), $('.name-error'), 'programme name must be between 3 - 55 characters.');
+                handleErrors($('.starts'), $('.starts-error'), 'Programme starting time is required');
 
-            } else if (response.status === 'programme-exists') {
+            }else if (response.status === 'invalid-ends') {
                 handleButton(button, spinner);
-                handleErrors($('.name'), $('.name-error'), 'programme already exists');
+                handleErrors($('.ends'), $('.ends-error'), 'Programme ending time is required');
 
-            } else if (response.status === 'invalid-status') {
+            }else if (response.status === 'invalid-presenter') {
                 handleButton(button, spinner);
-                handleErrors($('.status'), $('.status-error'), 'programme status is required.');
+                handleErrors($('.presenter'), $('.presenter-error'), 'Programme presenter is required');
+
+            }else if (response.status === 'invalid-title') {
+                handleButton(button, spinner);
+                handleErrors($('.title'), $('.title-error'), 'Programme title is required');
+
+            }else if (response.status === 'invalid-description') {
+                handleButton(button, spinner);
+                handleErrors($('.description'), $('.description-error'), 'Programme description is required');
 
             } else if (response.status === 'success') {
                 handleButton(button, spinner);
@@ -122,6 +134,33 @@
             handleButton(button, spinner);
             alert('Network Error');
         });
+    });
+
+    $('.delete-programme').on('click', function() {
+        var caller = $(this);
+        if(confirm('Are you sure to delete?')) {
+            var request = $.ajax({
+                method: 'post',
+                url: caller.attr('data-url'),
+                processData: false,
+                contentType: false,
+                dataType: 'json'
+            });
+
+            request.done(function(response) {
+                if (response === null) {
+                    alert('Network Error');
+                }else if (response.status === "success") {
+                    window.location.reload();
+                } else if (response.status === "error") {
+                    alert('An error ocurred. Try again');
+                }
+            });
+
+            request.fail(function() {
+                alert('Network Error');
+            });
+        };
     });
 
 })(jQuery);

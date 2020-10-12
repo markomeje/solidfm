@@ -6,65 +6,40 @@
 				<a href="javascript:;" class="" data-toggle="modal" data-target="#edit-programme-<?= $id; ?>">
 					<?= empty($programme->title) ? "No Ttile" : Application\Core\Help::limitStringLength(ucfirst($programme->title), 19); ?>
 				</a>
-				<?php if(isset($allTitles) && count($allTitles) > 0): ?>
-				    <?php $moreTitles = []; ?>
-					<?php foreach ($allTitles as $title): ?>
-						<?php $moreTitles[$title->programme][] = $title; ?>
-					<?php endforeach; ?>
-				<?php endif; ?>
 				<div class="d-flex align-items-center">
 					<div class="text-dark mr-2 cursor-pointer">
 		            	<div class="dropdown">
-		            		<div class=""  data-toggle="dropdown" data-boundary="window">
-		            			<i class="icofont-caret-down"></i>
+		            		<div class=""  data-toggle="dropdown">
+		            			<i class="icofont-caret-down mt-1"></i>
 		            			<div class="dropdown-menu dropdown-menu-right add-title-dropdown">
-		            				<?php $moreProgrammeTitles = $moreTitles[$id]; ?>
-				            		<?php if(empty($moreProgrammeTitles)): ?>
-									    <a class="dropdown-item" href="javascript:;">No additional titles added.</a>
-								    <?php else: ?>
-								    	<?php $count = 0; ?>
-								    	<?php foreach($moreProgrammeTitles as $key => $value): ?>
-								    		<?php $count++; ?>
-								    		<?php if($count > 1): ?>
-									    		<div class="dropdown-divider"></div>
-									    	<?php endif; ?>
-
-									    	<?php $start = empty($value->startingtime) ? "00:00" : date("G:ia", strtotime($value->startingtime)); ?>
-									    	<?php $end = empty($value->endingtime) ? "00:00" : date("G:ia", strtotime($value->endingtime)); ?>
-
-									    	<a class="dropdown-item" href="javascript:;">
-									    		<?= empty($value->title) ? "No Title" : $value->title; ?> (<?= $start."-".$end; ?>)
-									    	</a>
-									    <?php endforeach; ?>
-								    <?php endif; ?>
+									<a class="dropdown-item" href="javascript:;">Nill</a>
 								</div>
-		            		</div>
-		            	</div>
-		            	<?php require BACKEND_PATH . DS . "programmes" . DS . "titles" . DS . "listings.php"; ?>
-		            </div>
-		            <div class="text-dark cursor-pointer">
-		            	<div class="dropdown">
-		            		<div class="" data-toggle="dropdown">
-		            			<small><i class="icofont-plus"></i></small>
-		            			<?php require BACKEND_PATH . DS . "programmes" . DS . "titles" . DS . "add.php"; ?>
 		            		</div>
 		            	</div>
 		            </div>
 				</div>
 			</div>
-			<div class="font-weight-bold d-flex justify-content-between align-items-center">
+			<div class="d-flex justify-content-between align-items-center">
 				<small class="text-muted">
-					(<?= empty($programme->time) ? "00:00" : $programme->time; ?>) hours
+					<?= empty($programme->day) ? "Nill" : ucfirst($programme->day); ?>
+				</small>
+				<small class="text-muted">
+					<?= empty($programme->starts) ? "00:00" : strtoupper(Application\Core\Help::formatTime($programme->starts)); ?> - <?= empty($programme->ends) ? "00:00" : strtoupper(Application\Core\Help::formatTime($programme->ends)); ?>
 				</small>
 			</div>
 		</div>
 		<div class="card-footer bg-dark d-flex justify-content-between align-items-center">
 			<div class="custom-control custom-switch">
-                <input type="checkbox" class="custom-control-input" id="<?= empty($programme->id) ? 0 : $programme->id; ?>; ?>">
-                <label class="custom-control-label" for="<?= empty($programme->id) ? 0 : $programme->id; ?>; ?>"></label>
+                <input type="checkbox" <?= isset($programme->status) && strtolower($programme->status) === "active" ? 'checked=""' : '' ; ?> class="custom-control-input" id="<?= $id; ?>">
+                <label class="custom-control-label" for="<?= $id; ?>"></label>
             </div>
-        	<div class="text-white cursor-pointer">
-            	<i class="icofont-caret-down"></i>
+        	<div class="text-white d-flex align-items-center">
+            	<small class="mr-2 cursor-pointer" data-toggle="modal" data-target="#edit-programme-<?= $id; ?>">
+            		<i class="icofont-edit"></i>
+            	</small>
+            	<small class="cursor-pointer delete-programme" data-url="<?= DOMAIN; ?>/programmes/deleteProgramme/<?= $id; ?>">
+            		<i class="icofont-ui-delete"></i>
+            	</small>
             </div>
 		</div>
 	</div>

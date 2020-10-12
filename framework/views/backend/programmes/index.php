@@ -27,29 +27,36 @@
 			</div>
 			<div class="buttons mb-4">
 				<div class="d-flex justify-content-between">
-					<div class="bg-dark text-white px-3 rounded cursor-pointer d-flex align-items-center" data-toggle="modal" data-target="#add-programme">
+					<div class="bg-dark text-white px-3 py-2 rounded cursor-pointer d-flex align-items-center" data-toggle="modal" data-target="#add-programme">
 						<small class="font-sm">
 							<i class="icofont-plus"></i>
 						</small>
 						<div class="pl-2">Add programme</div>
 					</div>
-					<div class="d-flex">
-						<a href="javascript:;" class="btn bg-dark text-white">
-							<i class="icofont-caret-down"></i>
-						</a>
+					<div class="px-3 py-2 bg-dark rounded cursor-pointer">
+						<div class="dropdown">
+		            		<div class=""  data-toggle="dropdown">
+		            			<small>
+		            				<i class="icofont-caret-down text-white"></i>
+		            			</small>
+		            			<div class="dropdown-menu dropdown-menu-right add-title-dropdown">
+									<a class="dropdown-item" href="javascript:;">Delete all</a>
+								</div>
+		            		</div>
+		            	</div>
 					</div>
 				</div>
 				<?php require BACKEND_PATH . DS . "programmes" . DS . "partials" . DS . "add.php"; ?>
 			</div>
-			<?php if(empty($allprogrammes)): ?>
+			<?php if(empty($allProgrammes)): ?>
 				<div class="alert alert-info d-block">No programmes yet.</div>
 			<?php else: ?>
 				<div class="row">
-					<?php foreach($allprogrammes as $programme): ?>
+					<?php foreach($allProgrammes as $programme): ?>
 						<?php require BACKEND_PATH . DS . "programmes" . DS . "partials" . DS . "listings.php"; ?>
 					<?php endforeach; ?>
 				</div>
-				<?php foreach($allprogrammes as $category): ?>
+				<?php foreach($allProgrammes as $programme): ?>
 					<?php require BACKEND_PATH . DS . "programmes" . DS . "partials" . DS . "edit.php"; ?>
 				<?php endforeach; ?>
 			<?php endif; ?>

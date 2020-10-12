@@ -3,25 +3,32 @@
 	<div id="maincontent" class="qt-main">
 		<?php require FRONTEND_PATH . DS . "home" . DS . "partials" . DS . "slider.php"; ?>
 		<?php require FRONTEND_PATH . DS . "home" . DS . "partials" . DS . "upcoming.php"; ?>
-		<div class="qt-container qt-spacer-m qt-section">
-			<h3 class="qt-caption-med"><span>News highlights</span></h3>
-			<hr class="qt-spacer-s">
-			<div class="qt-part-archive-item qt-part-item-post-hero">
-				<div class="qt-item-header">
-					<div class="qt-header-mid qt-vc">
-						<div class="qt-vi">
-							<div class="qt-the-content qt-spacer-s small hide-on-med-and-down ">
-								<p class="qt-spacer-s qt-text-shadow">.</p>
-								<p><a href="#read" class="qt-btn qt-btn-l qt-btn-primary "><i class="dripicons-align-justify"></i></a></p>
+		<?php if(empty($allNews)): ?>
+			<h3 class="qt-caption-med"></h3>
+		<?php else: ?>
+			<?php $latestNews = array_slice($allNews, 0, 1); ?>
+			<?php foreach($latestNews as $news): ?>
+				<div class="qt-container qt-spacer-m qt-section">
+					<h3 class="qt-caption-med"><span>News highlights</span></h3>
+					<hr class="qt-spacer-s">
+					<div class="qt-part-archive-item qt-part-item-post-hero">
+						<div class="qt-item-header">
+							<div class="qt-header-mid qt-vc">
+								<div class="qt-vi">
+									<div class="qt-the-content qt-spacer-s small hide-on-med-and-down ">
+										<p class="qt-spacer-s qt-text-shadow">.</p>
+										<p><a href="<?= DOMAIN; ?>/news/read/<?= empty($news->id) ? 0 : $news->id; ?>" class="qt-btn qt-btn-l qt-btn-primary "><i class="dripicons-align-justify"></i></a></p>
+									</div>
+								</div>
+							</div>
+							<div class="qt-header-bg" data-bgimage="<?= PUBLIC_URL; ?>/images/news/<?= empty($news->image) ? 'default.jpg' : $news->image; ?>">
+								<img src="<?= PUBLIC_URL; ?>/images/news/<?= empty($news->image) ? 'default.jpg' : $news->image; ?>" alt="Featured image" width="1170" height="512">
 							</div>
 						</div>
 					</div>
-					<div class="qt-header-bg" data-bgimage="<?= PUBLIC_URL; ?>/images/slide_5.jpg">
-						<img src="<?= PUBLIC_URL; ?>/images/slide_5.jpg" alt="Featured image" width="1170" height="512">
-					</div>
 				</div>
-			</div>
-		</div>
+			<?php endforeach; ?>
+		<?php endif; ?>
 		<div class="qt-container qt-spacer-m">
 			<h5 class="qt-caption-small"><span>Featured News</span></h5>
 			<hr class="qt-spacer-s">

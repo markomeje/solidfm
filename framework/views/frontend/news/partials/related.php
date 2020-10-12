@@ -7,7 +7,7 @@
 <?php else: ?>
 	<div class="row">
 		<?php foreach($allNews as $news): ?>
-			<?php if($news->id !== $newsId): ?>
+			<?php if($news->id !== $id): ?>
 				<div class="col s12 m6">
 					<div class="qt-part-archive-item qt-featured">
 						<div class="qt-item-header">

@@ -154,7 +154,7 @@ class Help {
 	}
 
 	public static function formatTime($time = "") {
-		return (empty($time) || $time === "") ? date("G:ia") : date("G:ia", strtotime($time));
+		return (empty($time) || $time === "") ? date("g:i a") : date("g:i a", strtotime($time));
 	}
 
 	public static function getGenders() {

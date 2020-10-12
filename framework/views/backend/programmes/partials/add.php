@@ -12,8 +12,19 @@
                 <div class="modal-body">
                     <div class="form-row">
                         <div class="form-group input-group-lg col-md-6">
-                            <label class="text-muted">Year <em>(already filled)</em></label>
-                            <input type="text" name="year" class="form-control year" value="<?= date("Y"); ?>">
+                            <label class="text-muted">Year</label>
+                            <select class="custom-select form-control year" name="year">
+                                <?php $years = [date("Y"), (date("Y") + 1)]; ?>
+                                <?php if(empty($years)): ?>
+                                    <option value="">No years</option>
+                                <?php else: ?>
+                                    <?php foreach($years as $year): ?>
+                                        <option value="<?= $year; ?>">
+                                            <?= $year; ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+                            </select>
                             <small class="error year-error text-danger"></small>
                         </div>
                         <div class="form-group input-group-lg col-md-6">
@@ -49,78 +60,50 @@
                             <small class="error day-error text-danger"></small>
                         </div>
                         <div class="form-group input-group-lg col-md-6">
-                            <label class="text-muted">Belt</label>
-                            <select class="custom-select form-control belt" name="belt">
-                                <?php if(empty($programmeBelts)): ?>
-                                    <option value="">No belts</option>
-                                <?php else: ?>
-                                    <?php foreach($programmeBelts as $belt): ?>
-                                        <option value="<?= $belt; ?>">
-                                            <?= ucfirst($belt); ?>
-                                        </option>
-                                    <?php endforeach; ?>
-                                <?php endif; ?>
-                            </select>
-                            <small class="error belt-error text-danger"></small>
+                            <label class="text-muted">Presenter</label>
+                            <input type="text" name="presenter" class="form-control presenter" placeholder="e.g., Team">
+                            <small class="error presenter-error text-danger"></small>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group input-group-lg col-md-6">
-                            <label class="text-muted">Time</label>
-                            <input type="text" name="time" class="form-control time" placeholder="e.g., 0500 - 1000 hours">
-                            <small class="error time-error text-danger"></small>
+                            <label class="text-muted">Starts</label>
+                            <input type="time" name="starts" class="form-control starts">
+                            <small class="error starts-error text-danger"></small>
                         </div>
+                        <div class="form-group input-group-lg col-md-6">
+                            <label class="text-muted">Ends</label>
+                            <input type="time" name="ends" class="form-control ends">
+                            <small class="error ends-error text-danger"></small>
+                        </div>
+                    </div>
+                    <div class="form-row">
                         <div class="form-group input-group-lg col-md-6">
                             <label class="text-muted">Status</label>
                             <select class="custom-select form-control status" name="status">
-                                <?php if(empty($programmeStatus)): ?>
-                                    <option value="">No status</option>
+                                <?php if(empty($status)): ?>
+                                    <option value="">No days</option>
                                 <?php else: ?>
-                                    <?php foreach($programmeStatus as $status): ?>
-                                        <option value="<?= $status; ?>">
-                                            <?= ucfirst($status); ?>
+                                    <?php foreach($status as $value): ?>
+                                        <option value="<?= $value; ?>">
+                                            <?= ucfirst($value); ?>
                                         </option>
                                     <?php endforeach; ?>
                                 <?php endif; ?>
                             </select>
                             <small class="error status-error text-danger"></small>
                         </div>
-                    </div>
-                    <div class="form-row">
                         <div class="form-group input-group-lg col-md-6">
-                            <label class="text-muted">Presenter</label>
-                            <input type="text" name="presenter" class="form-control presenter" placeholder="e.g., Miss. Cristi Nero">
-                            <small class="error presenter-error text-danger"></small>
-                        </div>
-                        <div class="form-group input-group-lg col-md-6">
-                            <label class="text-muted">Producer</label>
-                            <input type="text" name="producer" class="form-control producer" placeholder="e.g., Engr. Kali John">
-                            <small class="error producer-error text-danger"></small>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group input-group-lg col-md-6">
-                            <label class="text-muted">Anchor</label>
-                            <input type="text" name="anchor" class="form-control anchor" placeholder="e.g., Bose Lilian">
-                            <small class="error anchor-error text-danger"></small>
-                        </div>
-                        <div class="form-group input-group-lg col-md-6">
-                            <label class="text-muted">Host</label>
-                            <input type="text" name="host" class="form-control host" placeholder="e.g., Chukwu Ike">
-                            <small class="error host-error text-danger"></small>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-12">
-                            <label class="text-muted">Synopsis</label>
-                            <textarea class="form-control synopsis" rows="3" name="synopsis" placeholder="Enter synopsis here"></textarea>
-                            <small class="error synopsis-error text-danger"></small>
-                        </div>
-                        <div class="form-group col-12">
                             <label class="text-muted">Title</label>
-                            <textarea class="form-control title" rows="3" placeholder="Enter title here" name="title"></textarea>
-                            <small class="form-text text-muted">Just add main or first title. After you add this schedule, you'll see an option for adding other titles.</small>
+                            <input type="text" name="title" class="form-control title" placeholder="e.g., Soul Sistaz">
                             <small class="error title-error text-danger"></small>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-12">
+                            <label class="text-muted">Description</label>
+                            <textarea class="form-control description" rows="4" placeholder="Enter description here" name="description"></textarea>
+                            <small class="error description-error text-danger"></small>
                         </div>
                     </div>
                 </div>

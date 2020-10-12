@@ -11,7 +11,7 @@
                                 <input type="file" name="image" class="custom-file-input news-image form-control" id="news-image-<?= $id; ?>">
                                 <label class="custom-file-label h-100" for="news-image-<?= $id; ?>">Change image</label>
                             </div>
-                            <small class="error news-image-error text-danger"></small>
+                            <small class="error news-image-error text-danger"></small>-+ jj
                         </div>
                         <button type="submit" class="btn mt-4 bg-dark text-white btn-sm change-news-image-button px-4 btn-block">
 				            <img src="<?= PUBLIC_URL; ?>/images/banners/spinner.svg" class="mr-2 d-none change-news-image-spinner mb-1">
@@ -24,7 +24,7 @@
 		<img src="<?= PUBLIC_URL; ?>/images/news/<?= empty($news->image) ? 'default.jpg' : $news->image; ?>" class="card-img-top img-fluid w-100 cursor-pointer">
 		<div class="card-body">
 			<div class="font-weight-bold">
-				<a href="javascript:;" class="" data-toggle="modal" data-target="#edit-news-<?= $id; ?>">
+				<a href="javascript:;" data-toggle="modal" data-target="#edit-news-<?= $id; ?>">
 					<?= empty($news->title) ? "No Title" : Application\Core\Help::limitStringLength($news->title, 18); ?>
 				</a>
 			</div>

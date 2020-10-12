@@ -64,16 +64,14 @@ class Adverts extends Model {
         }
     }
 
-    public static function getAllActiveAdverts($pageNumber = 0) {
+    public static function getAllActiveAdverts() {
         try {
             $database = Database::connect();
             $table = self::$table;
-            $pagination = Pagination::paginate("SELECT * FROM {$table}", [], $pageNumber);
-            $offset = $pagination->getOffset();
-            $limit = $pagination->itemsPerPage;
-            $database->prepare("SELECT * FROM {$table} LIMIT {$limit} OFFSET {$offset}");
-            $database->execute();
-            return ["allCategories" => $database->fetchAll(), "pagination" => $pagination];
+            $database->prepare("SELECT * FROM {$table} WHERE start <= :start AND expiry >= :expiry AND status = :status ORDER BY RAND() LIMIT 5");
+            $current = date("Y-m-d");
+            $database->execute(["start" => $current, "expiry" => $current, "status" => "active"]);
+            return $database->fetchAll();
         } catch (Exception $error) {
             Logger::log("GETTING ALL ACTIVE ADVERTS ERROR", $error->getMessage(), __FILE__, __LINE__);
             return false;
@@ -97,7 +95,6 @@ class Adverts extends Model {
         $advert = self::getAdvertById($id);
         $image = isset($advert->image) ? $advert->image : null;
         if(!Uploader::deleteFile(PUBLIC_PATH . DS . "images" . DS . "adverts" . DS . $image)) throw new Exception("Could not unlink image for advert with id " .$id, 1);
-        
     }
 
     public static function deleteAdvert($id) {
