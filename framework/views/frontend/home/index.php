@@ -83,12 +83,12 @@
 						<?php endforeach; ?>
 					</ul>
 					<p class="aligncenter qt-spacer-m">
-						<a href="javascript: ?>" class="qt-btn qt-btn qt-btn-l qt-btn-primary">View full chart</a>
+						<a href="" class="qt-btn qt-btn qt-btn-l qt-btn-primary">View full chart</a>
 					</p>
 				<?php endif; ?>
 			</div>
-			<div class="qt-header-bg" data-bgimage="<?= PUBLIC_URL; ?>/images/footer_img1.jpg">
-				<img src="<?= PUBLIC_URL; ?>/images/footer_img1.jpg" alt="Featured image" width="690" height="302">
+			<div class="qt-header-bg" data-bgimage="<?= PUBLIC_URL; ?>/images/music/default.jpg">
+				<img src="<?= PUBLIC_URL; ?>/images/music/default.jpg" alt="Featured image" width="690" height="302">
 			</div>
 		</div>
 		<p></p>

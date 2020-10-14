@@ -5,16 +5,8 @@
 			<!-- POST HERO ITEM ========================= -->
 			<div class="qt-part-archive-item qt-part-item-post-hero">
 				<div class="qt-item-header">
-					<div class="qt-header-top">
-						<div class="qt-feedback">
-							<a>17<i class="dripicons-message"></i></a><a>34<i class="dripicons-heart"></i></a>
-						</div>
-					</div>
 					<div class="qt-header-mid qt-vc">
 						<div class="qt-vi">
-							<ul class="qt-tags">
-								<li><a href="#">Adventure</a></li>
-							</ul>
 							<h2 class="qt-title">
 								<a href="#read" class="qt-text-shadow">
 									Welcome to Solid Fm 100.9
@@ -28,8 +20,8 @@
 							</div>
 						</div>
 					</div>
-					<div class="qt-header-bg" data-bgimage="<?= PUBLIC_URL; ?>/images/slide_2.jpg">
-						<img src="<?= PUBLIC_URL; ?>/images/slide_2.jpg" alt="Featured image" width="1170" height="512">
+					<div class="qt-header-bg" data-bgimage="<?= PUBLIC_URL; ?>/images/sliders/1.jpg">
+						<img src="<?= PUBLIC_URL; ?>/images/sliders/1.jpg" alt="Featured image" width="1170" height="512">
 					</div>
 				</div>
 			</div>
@@ -40,31 +32,23 @@
 			<!-- POST HERO ITEM ========================= -->
 			<div class="qt-part-archive-item qt-part-item-post-hero">
 				<div class="qt-item-header">
-					<div class="qt-header-top">
-						<div class="qt-feedback">
-							<a>17<i class="dripicons-message"></i></a><a>34<i class="dripicons-heart"></i></a>
-						</div>
-					</div>
 					<div class="qt-header-mid qt-vc">
 						<div class="qt-vi">
-							<ul class="qt-tags">
-								<li><a href="#"></a></li>
-							</ul>
 							<h2 class="qt-title">
 				<a href="#read" class="qt-text-shadow">
-					 Solid 100.9
+					 Solid 100.9 FM
 				</a>
 			</h2>
 							<div class="qt-the-content qt-spacer-s small hide-on-med-and-down ">
 								<p class="qt-spacer-s qt-text-shadow">
-									___.
+									News | Sports | Music
 								</p>
 								<p><a href="#read" class="qt-btn qt-btn-l qt-btn-primary "><i class="dripicons-align-justify"></i></a></p>
 							</div>
 						</div>
 					</div>
-					<div class="qt-header-bg" data-bgimage="<?= PUBLIC_URL; ?>/images/slider_1.jpg">
-						<img src="<?= PUBLIC_URL; ?>/images/slider_6.jpg" alt="Featured image" width="1170" height="512">
+					<div class="qt-header-bg" data-bgimage="<?= PUBLIC_URL; ?>/images/sliders/2.jpg">
+						<img src="<?= PUBLIC_URL; ?>/images/sliders/2.jpg" alt="Featured image" width="1170" height="512">
 					</div>
 				</div>
 			</div>
@@ -75,16 +59,8 @@
 			<!-- POST HERO ITEM ========================= -->
 			<div class="qt-part-archive-item qt-part-item-post-hero">
 				<div class="qt-item-header">
-					<div class="qt-header-top">
-						<div class="qt-feedback">
-							<a>17<i class="dripicons-message"></i></a><a>34<i class="dripicons-heart"></i></a>
-						</div>
-					</div>
 					<div class="qt-header-mid qt-vc">
 						<div class="qt-vi">
-							<ul class="qt-tags">
-								<li><a href="#">_</a></li>
-							</ul>
 							<h2 class="qt-title">
 				<a href="#read" class="qt-text-shadow">
 					This is Solid Fm 100.9
@@ -92,14 +68,14 @@
 			</h2>
 							<div class="qt-the-content qt-spacer-s small hide-on-med-and-down ">
 								<p class="qt-spacer-s qt-text-shadow">
-									Enugu
+									We Rock Radio
 								</p>
 								<p><a href="#read" class="qt-btn qt-btn-l qt-btn-primary "><i class="dripicons-align-justify"></i></a></p>
 							</div>
 						</div>
 					</div>
-					<div class="qt-header-bg" data-bgimage="<?= PUBLIC_URL; ?>/images/slide_4.jpg">
-						<img src="<?= PUBLIC_URL; ?>/images/slide_4.jpg" alt="Featured image" width="1170" height="512">
+					<div class="qt-header-bg" data-bgimage="<?= PUBLIC_URL; ?>/images/sliders/3.jpg">
+						<img src="<?= PUBLIC_URL; ?>/images/sliders/3.jpg" alt="Featured image" width="1170" height="512">
 					</div>
 				</div>
 			</div>
@@ -110,16 +86,8 @@
 			<!-- POST HERO ITEM ========================= -->
 			<div class="qt-part-archive-item qt-part-item-post-hero">
 				<div class="qt-item-header">
-					<div class="qt-header-top">
-						<div class="qt-feedback">
-							<a>17<i class="dripicons-message"></i></a><a>34<i class="dripicons-heart"></i></a>
-						</div>
-					</div>
 					<div class="qt-header-mid qt-vc">
 						<div class="qt-vi">
-							<ul class="qt-tags">
-								<li><a href="#">Shows</a></li>
-							</ul>
 							<h2 class="qt-title">
 								<a href="#read" class="qt-text-shadow">
 									Sounds of Music You at its best
@@ -133,8 +101,8 @@
 							</div>
 						</div>
 					</div>
-					<div class="qt-header-bg" data-bgimage="<?= PUBLIC_URL; ?>/images/slide_3.jpg">
-						<img src="<?= PUBLIC_URL; ?>/images/slide_3.jpg" alt="Featured image" width="1170" height="512">
+					<div class="qt-header-bg" data-bgimage="<?= PUBLIC_URL; ?>/images/sliders/4.jpg">
+						<img src="<?= PUBLIC_URL; ?>/images/sliders/4.jpg" alt="Featured image" width="1170" height="512">
 					</div>
 				</div>
 			</div>

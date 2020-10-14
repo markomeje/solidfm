@@ -14,7 +14,7 @@
 	<ul class="qt-desktopmenu hide-on-xl-and-down">
 		<li class="qt-logo-link">
 			<a href="<?= DOMAIN; ?>">
-				<img src="<?= PUBLIC_URL; ?>/images/logo.png" alt="SolidFM" title="">
+				<img src="<?= PUBLIC_URL; ?>/images/logos/logo.png" alt="SolidFM" title="">
 			</a>
 		</li>
 		<li>

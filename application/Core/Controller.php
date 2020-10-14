@@ -15,8 +15,7 @@ class Controller extends Application {
 
     public function __construct() {
         parent::__construct();
-        $controller = strtolower(self::get("url"));
-        $this->activeController = View::active($controller);
+        $this->activeController = View::active(self::get("url"));
     }
 
     public function isAjaxRequest(){

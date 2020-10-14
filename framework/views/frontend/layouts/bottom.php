@@ -2,7 +2,7 @@
 <div class="qt-footer qt-footerwidgets">
 	<div class="qt-section qt-footer-widgets qt-content-primary-light">
 		<div class="qt-container">
-			<h2 class="qt-footer-logo"><a href="<?= DOMAIN; ?>"><img src="<?= PUBLIC_URL; ?>/images/logo.png" alt="" title=""><center></a></h2>
+			<h2 class="qt-footer-logo"><a href="<?= DOMAIN; ?>"><img src="<?= PUBLIC_URL; ?>/images/logos/logo.png" alt="" title=""><center></a></h2>
 			<div class="qt-widgets qt-widgets-footer qt-negative qt-spacer-m row">
 				<div class="col s12 m3 l3">
 					<div class="qt-widget">
@@ -72,8 +72,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="qt-header-bg" data-bgimage="<?= PUBLIC_URL; ?>/images/footer_img3.jpg">
-			<img src="<?= PUBLIC_URL; ?>/images/imagesfooter_img3.jpg" alt="Featured image" width="690" height="302">
+		<div class="qt-header-bg" data-bgimage="<?= PUBLIC_URL; ?>/images/banners/footer.jpg">
+			<img src="<?= PUBLIC_URL; ?>/images/banners/footer.jpg" alt="Featured image" width="690" height="302">
 		</div>
 	</div>
 	<div class="qt-footer-bottom qt-content-primary-dark">

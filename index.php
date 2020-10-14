@@ -1,5 +1,6 @@
 <?php
 
+
 //password_hash("Hr%?2020@!", PASSWORD_DEFAULT);
 
 date_default_timezone_set("Africa/Lagos");
@@ -60,7 +61,7 @@ Application\Library\Session::start();
 | or an exception has been thrown.
 |
 */
-if (ENVIROMENT === "production") {
+if (DEVELOPMENT === false) {
 	Application\Core\Handler::register();
 }
 
