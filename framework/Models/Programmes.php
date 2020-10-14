@@ -110,11 +110,25 @@ class Programmes extends Model {
         try {
             $database = Database::connect();
             $table = self::$table;
-            $database->prepare("SELECT * FROM {$table} WHERE year = :year AND month = :month AND day = :day AND starts >= :starts LIMIT 7");
-            $database->execute(["year" => date("Y"), "month" => date("F"), "day" => strtolower(date("l")), "starts" => date("g:i a")]);
+            $database->prepare("SELECT * FROM {$table} WHERE year = :year AND month = :month AND day = :day AND starts >= CURRENT_TIME ORDER BY starts");
+            $database->execute(["year" => date("Y"), "month" => date("F"), "day" => strtolower(date("l"))]);
             return $database->fetchAll();
         } catch (Exception $error) {
             Logger::log("GETTING ALL UPCOMING PROGRAMMES ERROR", $error->getMessage(), __FILE__, __LINE__);
+            return false;
+        }
+
+    }
+
+    public static function getAllProgrammesCount() {
+        try {
+            $database = Database::connect();
+            $table = self::$table;
+            $database->prepare("SELECT * FROM {$table}");
+            $database->execute();
+            return $database->rowCount();
+        } catch (Exception $error) {
+            Logger::log("GETTING ALL PROGRAMMES COUNT ERROR", $error->getMessage(), __FILE__, __LINE__);
             return false;
         }
 

@@ -3,11 +3,13 @@
 namespace Framework\Controllers;
 use Application\Core\{Controller, View, Help};
 use Framework\Models\{Adverts};
+use Application\Library\Authentication;
 
 class AdvertsController extends Controller {
 
 	public function __construct() {
 		parent::__construct();
+		Authentication::allow(["admin"]);
 	}
 
 	public function index($pageNumber = 0) {

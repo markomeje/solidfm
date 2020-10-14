@@ -1,5 +1,6 @@
 <?php
 
+//password_hash("Hr%?2020@!", PASSWORD_DEFAULT);
 
 date_default_timezone_set("Africa/Lagos");
 /**

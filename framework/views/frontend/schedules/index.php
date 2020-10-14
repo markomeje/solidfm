@@ -1,6 +1,19 @@
 <div class="qt-parentcontainer">
     <?php require FRONTEND_PATH . DS . "layouts" . DS . "navbar.php"; ?>
     <div id="maincontent" class="qt-main">
+        <div class="qt-pageheader qt-negative">
+            <div class="qt-container">
+                <h1 class="qt-caption qt-spacer-s">
+                    Solid100.9 FM 
+                </h1>
+                <h4 class="qt-subtitle">
+                   Programmes
+                </h4>
+            </div>
+            <div class="qt-header-bg" data-bgimage="<?= PUBLIC_URL; ?>/images/news/default.jpg">
+                <img src="<?= PUBLIC_URL; ?>/images/news/default.jpg" alt="Solid100.9 FM" width="690" height="302">
+            </div>
+        </div>
         <div class="qt-container qt-spacer-m">
             <h5 class="qt-caption-small"><span>Upcoming shows</span></h5>
             <hr class="qt-spacer-s">

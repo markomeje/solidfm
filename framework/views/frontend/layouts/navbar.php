@@ -1,17 +1,14 @@
-<!-- QT MENUBAR TOP ================================ -->
 <div class="qt-menubar-top  qt-content-primary hide-on-large-and-down">
 	<ul>
 		<li><a href="<?= DOMAIN; ?>/about"><i class="dripicons-chevron-right"></i>About</a></li>
-		<li><a href="<?= DOMAIN; ?>/adverts"><i class="dripicons-chevron-right"></i>Adverts</a></li>
 		<li><a href="<?= DOMAIN; ?>/contact"><i class="dripicons-chevron-right"></i>Contact</a></li>
-		<li class="right"><a href="#"><i class="qticon-beatport qt-socialicon"></i></a></li>
-		<li class="right"><a href="#"><i class="qticon-facebook qt-socialicon"></i></a></li>
-		<li class="right"><a href="#"><i class="qticon-twitter qt-socialicon"></i></a></li>
-		<li class="right"><a href="#"><i class="qticon-youtube qt-socialicon"></i></a></li>
-		<li class="right"><a href="#"><i class="qticon-instagram qt-socialicon"></i></a></li>
+		<li class="right"><a href="javascript:;"><i class="qticon-beatport qt-socialicon"></i></a></li>
+		<li class="right"><a href="javascript:;"><i class="qticon-facebook qt-socialicon"></i></a></li>
+		<li class="right"><a href="javascript:;"><i class="qticon-twitter qt-socialicon"></i></a></li>
+		<li class="right"><a href="javascript:;"><i class="qticon-youtube qt-socialicon"></i></a></li>
+		<li class="right"><a href="javascript:;"><i class="qticon-instagram qt-socialicon"></i></a></li>
 	</ul>
 </div>
-<!-- QT MENUBAR  ================================ -->
 <nav class="qt-menubar nav-wrapper qt-content-primary ">
 	<!-- desktop menu  HIDDEN IN MOBILE AND TABLETS -->
 	<ul class="qt-desktopmenu hide-on-xl-and-down">
@@ -23,6 +20,7 @@
 		<li>
 			<a href="<?= DOMAIN; ?>">Home</a>
 		</li>
+		<li><a href="<?= DOMAIN; ?>/about">About</a></li>
 		<li>
 			<a href="<?= DOMAIN; ?>/news">News</a>
 		</li>
@@ -44,13 +42,13 @@
 			</a>
 		</li> -->
 		<li class="right">
-			<a href="#!" class="button-playlistswitch" data-activates="channelslist"><i class="icon dripicons-media-play"></i>Listen</a>
+			<a href="javascript:;" class="button-playlistswitch" data-activates="channelslist"><i class="icon dripicons-media-play"></i>Listen</a>
 		</li>
 	</ul>
 	<!-- mobile menu icon and logo VISIBLE ONLY TABLET AND MOBILE-->
 	<ul class="qt-desktopmenu hide-on-xl-only ">
 		<li>
-			<a href="#" data-activates="qt-mobile-menu" class="button-collapse qt-menu-switch qt-btn qt-btn-primary qt-btn-m">
+			<a href="javascript:;" data-activates="qt-mobile-menu" class="button-collapse qt-menu-switch qt-btn qt-btn-primary qt-btn-m">
 				<i class="dripicons-menu"></i>
 			</a>
 		</li>
@@ -67,6 +65,7 @@
 		<li>
 			<a href="<?= DOMAIN; ?>">Home</a>
 		</li>
+		<li><a href="<?= DOMAIN; ?>/about">About</a></li>
 		<li class="">
 			<a href="<?= DOMAIN; ?>/news">News</a>
 		</li>
@@ -83,13 +82,12 @@
 </div>
 <!-- mobile toolbar -->
 <ul class="qt-mobile-toolbar qt-content-primary-dark qt-content-aside hide-on-large-only">
-	<li><a href="#!" data-expandable="#qtsearchbar" class="qt-scrolltop"><i class="icon dripicons-search"></i></a></li>
-	<li><a href="page-popup.html" class="qt-popupwindow" data-name="Music Player" data-width="320" data-height="500"><i class="icon dripicons-duplicate"></i></a></li>
-	<li><a href="#!" class="button-playlistswitch" data-activates="channelslist"><i class="icon dripicons-media-play"></i></a></li>
+	<li><a href="javascript:;" data-expandable="#qtsearchbar" class="qt-scrolltop"><i class="icon dripicons-search"></i></a></li>
+	<li><a href="javascript:;" class="button-playlistswitch" data-activates="channelslist"><i class="icon dripicons-media-play"></i></a></li>
 </ul>
 <div id="qtsearchbar" class="qt-searchbar qt-content-primary qt-expandable">
 	<div class="qt-expandable-inner">
-		<form method="post" action="#search" class="qt-inline-form">
+		<form method="post" action="javascript:;" class="qt-inline-form">
 			<div class="row qt-nopadding">
 				<div class="col s12 m8 l9">
 					<input placeholder="Search" value="" id="searchtex" type="text" class="validate qt-input-l" style="color: #000 !important;">

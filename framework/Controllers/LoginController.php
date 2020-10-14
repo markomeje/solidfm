@@ -1,8 +1,9 @@
 <?php
 
 namespace Framework\Controllers;
-use Application\Core\{Controller, View};
-use Application\Library\{Session, Cookie};
+use Application\Core\{Controller, View, Router};
+use Application\Library\{Session};
+use Framework\Models\Login;
 
 class LoginController extends Controller {
 
@@ -11,21 +12,19 @@ class LoginController extends Controller {
 	}
 
 	public function index() {
-		View::render("frontend", "login/index", ["title" => "Login"]);
+		View::render("backend", "login/index", ["title" => "Login"]);
 	}
 
 	public function login() {
 		if ($this->isAjaxRequest()) {
-			$response = $this->login->login();
+			$response = Login::login();
 			$this->jsonEncode($response);
 		}
 	}
 
 	public function logout() {
-		if ($this->isAjaxRequest()) {
-			$response = $this->login->logout();
-			$this->jsonEncode($response);
-		}
+		Session::destroy();
+		Router::redirect("/login");
 	}
 
 }

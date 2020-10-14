@@ -1,6 +1,7 @@
 <?php
 
 namespace Application\Library;
+use Application\Http\Cookie;
 
 
 class Session {
@@ -11,7 +12,6 @@ class Session {
      * @static static method
      */
 	public static function start() {
-        //ini_set('session.use_strict_mode', 1);
 		if(session_status() === PHP_SESSION_NONE) {
             session_start();
         }

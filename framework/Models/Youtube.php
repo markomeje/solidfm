@@ -21,7 +21,7 @@ class Youtube extends Model {
 			return ["status" => "invalid-link"];
         }elseif (self::youtubeVideoLinkExists($posted["link"]) === true) {
             return ["status" => "link-exists"];
-        }elseif (empty($posted["status"]) || !$posted["status"]) {
+        }elseif (empty($posted["status"])) {
             return ["status" => "invalid-status"];
 		}elseif (empty($posted["description"]) || !Validate::range($posted["description"], 3, 55)) {
 			return ["status" => "invalid-description"];
@@ -69,19 +69,6 @@ class Youtube extends Model {
 
 	}
 
-    public static function getCategoriesList() {
-        try {
-            $database = Database::connect();
-            $table = self::$table;
-            $database->prepare("SELECT name, id FROM {$table}");
-            $database->execute();
-            return $database->fetchAll();
-        } catch (Exception $error) {
-            Logger::log("GETTING ALL CATEGORIES LISTS ERROR", $error->getMessage(), __FILE__, __LINE__);
-            return false;
-        }
-    }
-
     public static function editYoutubeVideo($id) {
         $posted = ["link" => self::post("link"), "description" => self::post("description"), "status" => self::post("status")];
         if (empty($posted["link"]) || !Validate::url($posted["link"])) {
@@ -103,6 +90,34 @@ class Youtube extends Model {
             Logger::log("EDITING YOUTUBE VIDEO ERROR", $error->getMessage(), __FILE__, __LINE__);
             return ["status" => "error"];
         }
+    }
+
+    public static function deleteYoutubeVideo($id) {
+        try {
+            $database = Database::connect();
+            $table = self::$table;
+            $database->prepare("DELETE FROM {$table} WHERE id = :id LIMIT 1");
+            $database->execute(["id" => $id]);
+            return ($database->rowCount() > 0) ? ["status" => "success"] : ["status" => "error"];
+        } catch (Exception $error) {
+            Logger::log("DELETING YOUTUBE VIDEO ERROR", $error->getMessage(), __FILE__, __LINE__);
+            return ["status" => "error"];
+        }
+        
+    }
+
+    public static function getAllYoutubeVideosCount() {
+        try {
+            $database = Database::connect();
+            $table = self::$table;
+            $database->prepare("SELECT * FROM {$table}");
+            $database->execute();
+            return $database->rowCount();
+        } catch (Exception $error) {
+            Logger::log("GETTING ALL YOUTUBE VIDEOS COUNT ERROR", $error->getMessage(), __FILE__, __LINE__);
+            return false;
+        }
+
     }
 
 }

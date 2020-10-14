@@ -14,16 +14,12 @@
 <script src="<?= PUBLIC_URL; ?>/jquery/news.js" type="text/javascript"></script>
 <!-- summernote-->
 <script src="<?= PUBLIC_URL; ?>/summernote/summernote-bs4.min.js" type="text/javascript"></script>
-<!-- upcomings-->
-<script src="<?= PUBLIC_URL; ?>/jquery/upcomings.js" type="text/javascript"></script>
 <!-- adverts-->
 <script src="<?= PUBLIC_URL; ?>/jquery/adverts.js" type="text/javascript"></script>
 <!-- categories-->
 <script src="<?= PUBLIC_URL; ?>/jquery/categories.js" type="text/javascript"></script>
 <!-- programmes-->
 <script src="<?= PUBLIC_URL; ?>/jquery/programmes.js" type="text/javascript"></script>
-<!-- titles-->
-<script src="<?= PUBLIC_URL; ?>/jquery/titles.js" type="text/javascript"></script>
 <script type="text/javascript">
 	<?php $textareas = ["add-news-content" => ["height" => 300]]; ?>
 	<?php foreach($textareas as $area => $value): ?>

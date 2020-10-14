@@ -35,8 +35,8 @@
 					</div>
 					<div class="d-flex">
 						<a href="javascript:;" class="btn bg-dark ml-3 text-white">
-							<small class="text-danger">
-								<i class="icofont-ui-delete"></i>
+							<small class="text-white">
+								<i class="icofont-caret-down"></i>
 							</small>
 						</a>
 					</div>

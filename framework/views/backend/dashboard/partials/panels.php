@@ -1,5 +1,9 @@
 <?php $panels = [
-	"news" => ["link" => "archive", "count" => $allNewsCount], "programmes" => ["link" => "programmes"], "adverts" => ["link" => "adverts", "count" => $allAdvertsCount], "upcomings" => ["link" => "upcomings"], "youtube" => ["link" => "youtube"], "music" => ["link" => "chart"]
+	"news" => ["link" => "archive", "count" => $allNewsCount], 
+	"programmes" => ["link" => "programmes", "count" => $allProgrammesCount], 
+	"adverts" => ["link" => "adverts", "count" => $allAdvertsCount], 
+	"youtube" => ["link" => "youtube", "count" => $allYoutubeVideosCount, "title" => "videos"], 
+	"music" => ["link" => "music"]
 ]; ?>
 <?php if(empty($panels)): ?>
 	<div class="alert alert-danger">A fatal error occured</div>
@@ -18,14 +22,12 @@
 								<?= ucfirst($key); ?>
 							</a>
 							<small class="text-muted">
-								<?= empty($value["count"]) ? 0 : $value["count"]; ?> Added
+								<?= empty($value["count"]) ? 0 : $value["count"]; ?> <?= empty($value["title"]) ? "Added" : $value["title"]; ?>
 							</small>
 						</div>
 					</div>
 					<div class="card-footer bg-dark">
-						<small class="text-white">
-							<?= empty($femaleApplicantsPercentage) ? 0 : $femaleApplicantsPercentage; ?>% counted
-						</small>
+						<small class="text-white"></small>
 					</div>
 				</div>
 			</div>

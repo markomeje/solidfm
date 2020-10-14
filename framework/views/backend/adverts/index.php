@@ -8,11 +8,11 @@
 						<?php require BACKEND_PATH . DS . "layouts" . DS . "links.php"; ?>
 					</div>
 					<div class="col-12 col-md-6 mb-4">
-				        <form action="<?= DOMAIN; ?>" method="GET" class="search-dashboard">
+				        <form action="<?= DOMAIN; ?>/adverts/search/" method="GET" class="search-dashboard">
 				            <div class="row no-gutters">
 				                <div class="col-10 col-md-9 col-lg-10">
 				                    <div class="form-group input-group-lg mb-0">
-				                        <input type="search" name="query" class="form-control backend-search-input border border-right-0" placeholder="Search category" autocomplete="on" value="<?= empty($searchQuery) ? '' : $searchQuery; ?>">
+				                        <input type="search" name="query" class="form-control backend-search-input border border-right-0" placeholder="Search adverts" autocomplete="on" value="<?= empty($searchQuery) ? '' : $searchQuery; ?>">
 				                    </div>
 				                </div>
 				                <div class="col-2 col-md-3 col-lg-2">

@@ -8,7 +8,7 @@
 					<div class="qt-widget">
 						<h5 class="qt-caption-small"><span>Stay Connected</span></h5> Subscribe now to the newsletter to receive updates.
 						<hr class="qt-spacer-s">
-						<form method="post" action="#newsletter" class="qt-inline-form">
+						<form method="post" action="javascript:;" class="qt-inline-form">
 							<div class="row qt-nopadding">
 								<div class="col s12 m8 l9">
 									<input placeholder="Your email" value="" type="text" class="validate qt-input-s">
@@ -43,7 +43,7 @@
 							<p>
 								We are a young and dynamic radio station which wants to bring happiness in your life.
 								<br>
-								<a href="#">Discover more <i class="dripicons-arrow-thin-right"></i></a>
+								<a href="<?= DOMAIN; ?>/about">Discover more <i class="dripicons-arrow-thin-right"></i></a>
 							</p>
 						</div>
 					</div>
@@ -53,16 +53,19 @@
 						<h5 class="qt-caption-small"><span>Main links</span></h5>
 						<ul class="qt-widget-menu qt-list-chevron">
 							<li>
-								<a href="#">Home page</a>
+								<a href="<?= DOMAIN; ?>">Home page</a>
 							</li>
 							<li>
-								<a href="#">Shows schedule</a>
+								<a href="<?= DOMAIN; ?>/about">About</a>
 							</li>
 							<li>
-								<a href="#">Events archive</a>
+								<a href="<?= DOMAIN; ?>/schedules">Shows schedule</a>
 							</li>
 							<li>
-								<a href="#">Contacts</a>
+								<a href="javascript:;">Events archive</a>
+							</li>
+							<li>
+								<a href="<?= DOMAIN; ?>/contact">Contact</a>
 							</li>
 						</ul>
 					</div>
@@ -79,9 +82,8 @@
 				<div class="col s12 m12 l8">
 					Copyright 2020 <a href="#">solidfmradio.com</a> | Solid Fm 100.9
 					<ul class="qt-menu-footer qt-small qt-list-chevron ">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Privacy</a></li>
-						<li><a href="#">Sitemap</a></li>
+						<li><a href="<?= DOMAIN; ?>">Home</a></li>
+						<li><a href="<?= DOMAIN; ?>/contact">Sitemap</a></li>
 					</ul>
 				</div>
 				<div class="col s12 m12 l4">

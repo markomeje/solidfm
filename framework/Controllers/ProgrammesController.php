@@ -3,12 +3,14 @@
 namespace Framework\Controllers;
 use Application\Core\{View, Controller, Help};
 use Framework\Models\{Upcomings, Programmes, Titles};
+use Application\Library\Authentication;
 
 
 class ProgrammesController extends Controller {
 
 	public function __construct() {
 		parent::__construct();
+		Authentication::allow(["admin"]);
 	}
 
 	public function index($pageNumber = 0) {

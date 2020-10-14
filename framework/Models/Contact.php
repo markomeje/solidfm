@@ -22,9 +22,5 @@ class Contact extends Model {
 				$isValid = false;
 			}
 		}
-
-		if ($isValid) {
-			Mailer::mail();
-		}
 	}
 }

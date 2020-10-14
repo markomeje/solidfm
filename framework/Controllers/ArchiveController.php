@@ -3,12 +3,14 @@
 namespace Framework\Controllers;
 use Application\Core\{View, Controller};
 use Framework\Models\{News, Categories};
+use Application\Library\Authentication;
 
 
 class ArchiveController extends Controller {
 
 	public function __construct() {
 		parent::__construct();
+		Authentication::allow(["admin"]);
 	}
 
 	public function index($pageNumber = 0) {

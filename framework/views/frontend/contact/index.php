@@ -17,8 +17,8 @@
 	                <li><a href="#"><i class="qticon-soundcloud"></i></a></li>
 	            </ul>
 	        </div>
-	        <div class="qt-header-bg" data-bgimage="imagestemplate/full-1600-700.jpg">
-	            <img src="imagestemplate/full-1600-700.jpg" alt="Featured image" width="690" height="302">
+	        <div class="qt-header-bg" data-bgimage="<?= PUBLIC_URL; ?>/images/banners/card.jpg">
+	            <img src="<?= PUBLIC_URL; ?>/images/banners/card.jpg" alt="Featured image" width="690" height="302">
 	        </div>
 	    </div>
 	    <!-- HEADER CONTACTS END ========================= -->
@@ -44,9 +44,9 @@
 	                                <div id="contacts" class="row qt-contacts">
 	                                    <div class="col s12">
 	                                        <h3 class="left-align qt-vertical-padding-m">Our contacts</h3>
-	                                        <p><i class="qt-bigicon dripicons-phone"></i><span>+44 443 53 2324</span></p>
-	                                        <p><i class="qt-bigicon dripicons-phone"></i><span>info@bookmenow.com</span></p>
-	                                        <p><i class="qt-bigicon dripicons-phone"></i><span>Road Avenue, California</span></p>
+	                                        <p><i class="qt-bigicon dripicons-phone"></i><span>+234 (0) 909 054 5009</span></p>
+	                                        <p><i class="qt-bigicon dripicons-phone"></i><span>info@solidfmradio.com</span></p>
+	                                        <p><i class="qt-bigicon dripicons-phone"></i><span>10B Savage Cresent, GRA, Enugu</span></p>
 	                                    </div>
 	                                </div>
 	                                <div id="map" class="qt-map">

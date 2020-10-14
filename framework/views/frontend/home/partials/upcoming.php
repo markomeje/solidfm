@@ -29,8 +29,8 @@
 												</p>
 											</div>
 										</div>
-										<div class="qt-header-bg" data-bgimage="<?= PUBLIC_URL; ?>/images/upcomings/<?= empty($upcoming->image) ? 'default.jpg' : $upcoming->image; ?>">
-											<img src="<?= PUBLIC_URL; ?>/images/upcomings/<?= empty($upcoming->image) ? 'default.jpg' : $upcoming->image; ?>" alt="Solid100.9 FM">
+										<div class="qt-header-bg" data-bgimage="<?= PUBLIC_URL; ?>/images/banners/default.jpg">
+											<img src="<?= PUBLIC_URL; ?>/images/banners/default.jpg" alt="Solid100.9 FM">
 										</div>
 									</div>
 								</div>

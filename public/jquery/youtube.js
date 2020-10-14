@@ -47,8 +47,8 @@
                 handleButton(button, spinner);
                 message.removeClass('d-none alert-danger').addClass('alert-success');
                 message.html('Operation successful.').fadeIn();
-                // window.location.reload();
-                // 
+                window.location.reload();
+
             } else if (response.status === 'error') {
                 handleButton(button, spinner);
                 message.removeClass('d-none alert-success').addClass('alert-danger');
@@ -106,6 +106,7 @@
                 handleButton(button, spinner);
                 message.removeClass('d-none alert-danger').addClass('alert-success');
                 message.html('Operation successful.').fadeIn();
+                window.location.reload();
 
             } else if (response.status === 'error') {
                 handleButton(button, spinner);
@@ -122,6 +123,33 @@
             alert('Network Error');
         });
 
+    });
+
+    $('.delete-youtube-video').on('click', function() {
+        var caller = $(this);
+        if(confirm('Are you sure to delete?')) {
+            var request = $.ajax({
+                method: 'post',
+                url: caller.attr('data-url'),
+                processData: false,
+                contentType: false,
+                dataType: 'json'
+            });
+
+            request.done(function(response) {
+                if (response === null) {
+                    alert('Network Error');
+                }else if (response.status === "success") {
+                    window.location.reload();
+                } else if (response.status === "error") {
+                    alert('An error ocurred. Try again');
+                }
+            });
+
+            request.fail(function() {
+                alert('System Error');
+            });
+        };
     });
 
 })(jQuery)
