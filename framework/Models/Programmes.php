@@ -49,7 +49,7 @@ class Programmes extends Model {
             $pagination = Pagination::paginate("SELECT * FROM {$table}", [], $pageNumber);
             $offset = $pagination->getOffset();
             $limit = $pagination->itemsPerPage;
-            $database->prepare("SELECT * FROM {$table} ORDER BY year ASC LIMIT {$limit} OFFSET {$offset}");
+            $database->prepare("SELECT * FROM {$table} ORDER BY starts ASC LIMIT {$limit} OFFSET {$offset}");
             $database->execute();
             return ["allProgrammes" => $database->fetchAll(), "pagination" => $pagination];
         } catch (Exception $error) {

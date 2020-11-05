@@ -13,7 +13,7 @@ class ContactController extends Controller {
 	public function index() {
 		$response = Contact::request();
 		$validationMessage = $this->isPostRequest() ? $response["status"] : "";
-		View::render("frontend", "contact/index", ["title" => "Contact", "controller" => $this->controller, "frontendLinks" => $this->frontendLinks, "validationMessage" => $validationMessage]);
+		View::render("frontend", "contact/index", ["title" => "Contact | Solid100.9 FM", "controller" => $this->controller, "frontendLinks" => $this->frontendLinks, "validationMessage" => $validationMessage]);
 	}
 
 }

@@ -12,7 +12,7 @@ class LoginController extends Controller {
 	}
 
 	public function index() {
-		View::render("backend", "login/index", ["title" => "Login"]);
+		View::render("backend", "login/index", ["title" => "Login | Solid100.9 FM"]);
 	}
 
 	public function login() {

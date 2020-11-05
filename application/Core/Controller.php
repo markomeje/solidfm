@@ -9,7 +9,7 @@ use Application\Library\{Session, Cookie};
 class Controller extends Application {
 
     public $activeController;
-    public $backendLinks = ["dashboard", "programmes", "archive", "adverts", "schedules", "categories", "youtube"];
+    public $backendLinks = ["dashboard", "programmes", "archive", "adverts", "music", "categories", "youtube"];
     public $frontendLinks = ["home", "services", "contact", "blog"];
 
 

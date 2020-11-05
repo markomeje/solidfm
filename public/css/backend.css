@@ -4,6 +4,21 @@
 	line-height: 35px;
 }
 
+.backend-sidebar {
+	width: 20%; 
+	min-height: 100vh; 
+	overflow-y: scroll;
+}
+
+.backend-sidebar ul {
+    padding-top: 80px;
+}
+
+.backend-area {
+	width: 80%;
+	padding-top: 95px;
+}
+
 .backend-search-input {
 	border-top-right-radius: 0 !important; 
 	border-bottom-right-radius: 0 !important;
@@ -35,4 +50,14 @@
 	width: 45px; 
 	height: 45px;
 	line-height: 45px;
+}
+
+@media (max-width: 768px) { 
+	.backend-sidebar {
+		display: none !important;
+	}
+
+	.backend-area {
+		width: 100%;
+	}
 }

@@ -115,7 +115,7 @@
                 handleButton(button, spinner);
                 message.removeClass('d-none alert-danger').addClass('alert-success');
                 message.html('Operation successful.').fadeIn();
-                window.location.reload();
+                window.location.href = response.redirect;
                 
             } else if (response.status === 'error') {
                 handleButton(button, spinner);

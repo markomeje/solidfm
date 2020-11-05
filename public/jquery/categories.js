@@ -43,8 +43,8 @@
                 handleButton(button, spinner);
                 message.removeClass('d-none alert-danger').addClass('alert-success');
                 message.html('Operation successful.').fadeIn();
-                // window.location.reload();
-                // 
+                window.location.reload();
+
             } else if (response.status === 'error') {
                 handleButton(button, spinner);
                 message.removeClass('d-none alert-success').addClass('alert-danger');
@@ -102,8 +102,8 @@
                 handleButton(button, spinner);
                 message.removeClass('d-none alert-danger').addClass('alert-success');
                 message.html('Operation successful.').fadeIn();
-                // window.location.reload();
-                // 
+                window.location.reload();
+
             } else if (response.status === 'error') {
                 handleButton(button, spinner);
                 message.removeClass('d-none alert-success').addClass('alert-danger');

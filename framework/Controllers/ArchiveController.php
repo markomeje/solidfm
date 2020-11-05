@@ -32,6 +32,11 @@ class ArchiveController extends Controller {
 		}
 	}
 
+	public function edit($id) {
+		$singleNews = News::getNewsById($id);
+		View::render("backend", "news/edit", ["backendLinks" => $this->backendLinks, "activeController" => $this->activeController, "searchQuery" => self::get("query"), "news" => $singleNews, "categoriesList" => Categories::getCategoriesList(), "id" => $id]);
+	}
+
 
 	public function editNews($id) {
 		if ($this->isAjaxRequest()) {

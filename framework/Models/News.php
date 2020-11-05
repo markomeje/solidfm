@@ -149,7 +149,7 @@ class News extends Model {
             $database->prepare("UPDATE {$table} SET title = :title, category = :category, author = :author, content = :content WHERE id = :id LIMIT 1");
             $merged = array_merge($posted, ["id" => $id]);
             $database->execute($merged);
-            return ($database->rowCount() > 0) ? ["status" => "success"] : ["status" => "error"];
+            return ($database->rowCount() > 0) ? ["status" => "success", "redirect" => DOMAIN."/archive"] : ["status" => "error"];
         } catch (Exception $error) {
             Logger::log("EDITING NEWS ERROR", $error->getMessage(), __FILE__, __LINE__);
             return ["status" => "error"];

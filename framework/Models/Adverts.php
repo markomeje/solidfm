@@ -68,7 +68,7 @@ class Adverts extends Model {
         try {
             $database = Database::connect();
             $table = self::$table;
-            $database->prepare("SELECT * FROM {$table} WHERE start <= :start AND expiry >= :expiry AND status = :status ORDER BY RAND() LIMIT 5");
+            $database->prepare("SELECT * FROM {$table} WHERE start <= :start AND expiry >= :expiry AND status = :status ORDER BY RAND() LIMIT 6");
             $current = date("Y-m-d");
             $database->execute(["start" => $current, "expiry" => $current, "status" => "active"]);
             return $database->fetchAll();
@@ -77,6 +77,7 @@ class Adverts extends Model {
             return false;
         }
     }
+    
 
     public static function getAdvertById($id) {
         try {

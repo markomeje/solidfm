@@ -14,6 +14,19 @@
         } 
     });
 
+    $('a[data-toggle="tooltip"]').tooltip({
+        animated: 'fade',
+        placement: 'bottom',
+        html: true
+    });
+    var preview = $(".preview");
+    $(".preview").hover(function () {
+        alert("Here");
+        $(".preview img").attr("src", $(this).attr("data-preview"));
+    }, function () {
+        $(".preview img").attr("src", "");
+    });
+
     $('.stop-propergation').click(function(event){
         event.stopPropagation();
     });

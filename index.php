@@ -1,7 +1,14 @@
 <?php
 
+//Edit News to a new page.
+//UX in backend.
+//Work on Image upload error.
+//Backend Branding
+//Team page
 
-//password_hash("Hr%?2020@!", PASSWORD_DEFAULT);
+//echo password_hash("iSL3#r.7q", PASSWORD_DEFAULT);
+//die();
+
 
 date_default_timezone_set("Africa/Lagos");
 /**
@@ -17,9 +24,9 @@ define("DS", str_replace("\\", "/", DIRECTORY_SEPARATOR));
  */
 define("FRAMEWORK_PATH", ROOT . DS . "framework");
 define("APPLICATION_PATH", ROOT . DS . "application");
-define("VIEWS_PATH", FRAMEWORK_PATH . DS . "views"); 
-define("BACKEND_PATH", VIEWS_PATH . DS . "backend");
 define("PUBLIC_PATH", ROOT . DS . "public");
+define("VIEWS_PATH", PUBLIC_PATH . DS . "views"); 
+define("BACKEND_PATH", VIEWS_PATH . DS . "backend");
 define("FRONTEND_PATH", VIEWS_PATH . DS . "frontend");
 
 /**

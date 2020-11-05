@@ -19,7 +19,8 @@ class Uploader {
                         'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
                         'application/pdf',
                         'application/zip',
-                        'application/vnd.ms-powerpoint']
+                        'application/vnd.ms-powerpoint'],
+        "audio" => ["mp3", "ogg", "mp4", "m4a"]
     ];
 
     public static $maximumFilesize = 4194304; //4MB in Bytes(binary)
@@ -28,7 +29,8 @@ class Uploader {
     public function __construct() {}
 
 
-    public static function process($file, $directory, $type = ""){
+    public static function process($file, $directory, $type = "", $maximumFilesize = 0){
+        $maximumFilesize = empty($maximumFilesize) ? self::$maximumFilesize : $maximumFilesize;
         if (!isset($file['error']) || is_array($file['error']) || UPLOAD_ERR_NO_FILE === $file["error"] || UPLOAD_ERR_FORM_SIZE === $file["error"] || UPLOAD_ERR_FORM_SIZE === $file["error"]) {
             return false;
         }
@@ -39,7 +41,7 @@ class Uploader {
         } else {
             $filename = self::getFileName($file);
             $extension = self::mimeToExtension(self::mime($file));
-            if(empty($extension) || $extension === false || $file["size"] > self::$maximumFilesize) return false;
+            if(empty($extension) || $extension === false || $file["size"] > $maximumFilesize) return false;
             $hashedFilename = substr(Generate::hash(strtolower($filename.$extension)), 0, 10);
             $basename = $hashedFilename . "." . $extension;
             $path = $directory . DS . $basename;
@@ -60,7 +62,7 @@ class Uploader {
         if(!file_exists($file["tmp_name"])){
             return false;
         }elseif(!function_exists('finfo_open')) {
-            Logger::log("finfo_open FUNCTION DOES NOT EXISTS", $error->getMessage(), __FILE__, __LINE__);
+            Logger::log("PHP VERSION FUNCTION ERROR", "finfo_open FUNCTION DOES NOT EXISTS", __FILE__, __LINE__);
             return false;
         }
 
@@ -80,7 +82,9 @@ class Uploader {
             'application/vnd.openxmlformats-officedocument.wordprocessingml.document' => 'docx',
             'application/pdf' => 'pdf',
             'application/zip' => 'zip',
-            'application/vnd.ms-powerpoint' => 'ppt'
+            'application/vnd.ms-powerpoint' => 'ppt',
+            "audio/mpeg" => "mp3",
+            "audio/x-m4a" => "m4a"
         ];
         return isset($array[$mime]) ? $array[$mime]: false;
     }
@@ -99,7 +103,8 @@ class Uploader {
             throw new Exception("Upload Permission Error");
         }else {
             $gumlet = new \Gumlet\ImageResize($path);
-            $gumlet->resize($width, $height, $allow_enlarge = True);
+            //$allow_enlarge = false;
+            $gumlet->resize($width, $height);
             $gumlet->save($path);
         }
     }
