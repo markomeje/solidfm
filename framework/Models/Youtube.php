@@ -4,6 +4,7 @@ namespace Framework\Models;
 use Application\Core\{Model, Logger};
 use Application\Library\{Validate, Uploader, Database};
 use Framework\Models\Components\Pagination;
+use \Exception;
 
 
 class Youtube extends Model {

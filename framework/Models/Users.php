@@ -3,6 +3,7 @@
 namespace Framework\Models;
 use Application\Core\{Model, Logger};
 use Application\Library\{Session, Validate, Database};
+use \Exception;
 
 
 class Users extends Model {

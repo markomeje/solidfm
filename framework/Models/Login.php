@@ -3,6 +3,7 @@
 namespace Framework\Models;
 use Application\Core\{Model, Logger};
 use Application\Library\{Validate, Authentication};
+use \Exception;
 
 
 class Login extends Model {

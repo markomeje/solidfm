@@ -13,7 +13,7 @@ use \Exception;
 class Uploader {
 
     public static $allowedMime = [
-        "image" =>  ["jpeg", "png", "gif", "jpeg"],
+        "image" =>  ["jpg", "png", "gif", "jpeg"],
         "csv"   =>  ['text/csv', 'application/vnd.ms-excel', 'text/plain'],
         "file"  =>  ['application/msword',
                         'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
@@ -39,9 +39,11 @@ class Uploader {
             $basename = "grades" . "." . "csv";
             $data = ["basename" => $basename, "extension" => "csv"];
         } else {
-            $filename = self::getFileName($file);
-            $extension = self::mimeToExtension(self::mime($file));
-            if(empty($extension) || $extension === false || $file["size"] > $maximumFilesize) return false;
+            $filename = $file["name"];
+            $filenameArray = explode(".", $filename);
+            $extension = strtolower(end($filenameArray));
+
+            if(empty($extension) || !in_array($extension, self::$allowedMime["image"]) || $file["size"] > $maximumFilesize) return false;
             $hashedFilename = substr(Generate::hash(strtolower($filename.$extension)), 0, 10);
             $basename = $hashedFilename . "." . $extension;
             $path = $directory . DS . $basename;
@@ -55,7 +57,7 @@ class Uploader {
     }
 
     public static function deleteFile($file){
-        return self::fileExists($file) && unlink($file);
+        if(self::fileExists($file)) return unlink($file);
     }
 
     private static function mime($file){

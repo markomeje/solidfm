@@ -1,14 +1,5 @@
 <?php
 
-//Edit News to a new page.
-//UX in backend.
-//Work on Image upload error.
-//Backend Branding
-//Team page
-
-//echo password_hash("iSL3#r.7q", PASSWORD_DEFAULT);
-//die();
-
 
 date_default_timezone_set("Africa/Lagos");
 /**

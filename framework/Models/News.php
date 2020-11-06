@@ -4,6 +4,7 @@ namespace Framework\Models;
 use Application\Core\{Model, Logger};
 use Application\Library\{Validate, Uploader, Database};
 use Framework\Models\Components\Pagination;
+use \Exception;
 
 
 class News extends Model {
@@ -67,7 +68,7 @@ class News extends Model {
     public static function deleteNewsImage($id) {
         $news = self::getNewsById($id);
         $image = isset($news->image) ? $news->image : null;
-        if(!Uploader::deleteFile(PUBLIC_PATH . DS . "images" . DS . "news" . DS . $image)) throw new Exception("Could not unlink image for news with id " .$id, 1);
+        Uploader::deleteFile(PUBLIC_PATH . DS . "images" . DS . "news" . DS . $image);
         
     }
 
