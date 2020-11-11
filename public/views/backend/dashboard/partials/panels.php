@@ -3,7 +3,8 @@
 	"programmes" => ["link" => "programmes", "count" => $allProgrammesCount], 
 	"adverts" => ["link" => "adverts", "count" => $allAdvertsCount], 
 	"youtube" => ["link" => "youtube", "count" => $allYoutubeVideosCount, "title" => "videos"], 
-	"music" => ["link" => "music", "count" => $allMusicCount]
+	"music" => ["link" => "music", "count" => $allMusicCount],
+	"team" => ["link" => "members", "count" => $allMembersCount],
 ]; ?>
 <?php if(empty($panels)): ?>
 	<div class="alert alert-danger">A fatal error occured</div>

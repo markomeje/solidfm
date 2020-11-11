@@ -26,6 +26,9 @@
 			<a href="<?= DOMAIN; ?>/events">Events</a>
 		</li>
 		<li>
+			<a href="<?= DOMAIN; ?>/team">Team</a>
+		</li>
+		<li>
 			<a href="<?= DOMAIN; ?>/schedules">Schedules</a>
 		</li>
 		<li><a href="<?= DOMAIN; ?>/contact">Contact</a></li>
@@ -64,6 +67,9 @@
 		</li>
 		<li class="">
 			<a href="<?= DOMAIN; ?>/events">Events</a>
+		</li>
+		<li>
+			<a href="<?= DOMAIN; ?>/team">Team</a>
 		</li>
 		<li>
 			<a href="<?= DOMAIN; ?>/schedules">Schedules</a>

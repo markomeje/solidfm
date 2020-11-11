@@ -2,7 +2,7 @@
 
 namespace Framework\Controllers;
 use Application\Core\{View, Controller};
-use Framework\Models\{Adverts, News, Programmes, Youtube, Stories, Sliders, Events, Music};
+use Framework\Models\{Adverts, News, Programmes, Youtube, Stories, Sliders, Events, Music, Members};
 use Application\Library\Authentication;
 
 
@@ -16,7 +16,7 @@ class DashboardController extends Controller {
 	public function index($pageNumber = 0) {
 		$allMusicChart = Music::getAllMusicChart();
 		$allEvents = Events::getAllEvents($pageNumber);
-		View::render("backend", "dashboard/index", ["backendLinks" => $this->backendLinks, "activeController" => $this->activeController, "allAdvertsCount" => Adverts::getAllAdvertsCount(), "allNewsCount" => News::getAllNewsCount(), "allProgrammesCount" => Programmes::getAllProgrammesCount(), "allYoutubeVideosCount" => Youtube::getAllYoutubeVideosCount(), "videoStoryStatus" => Stories::$videoStoryStatus, "allVideoStories" => Stories::getAllVideoStories(), "allSliders" => Sliders::getAllSliders(), "allEvents" => $allEvents["allEvents"], "allMusicCount" => count($allMusicChart)]);
+		View::render("backend", "dashboard/index", ["backendLinks" => $this->backendLinks, "activeController" => $this->activeController, "allAdvertsCount" => Adverts::getAllAdvertsCount(), "allNewsCount" => News::getAllNewsCount(), "allProgrammesCount" => Programmes::getAllProgrammesCount(), "allYoutubeVideosCount" => Youtube::getAllYoutubeVideosCount(), "videoStoryStatus" => Stories::$videoStoryStatus, "allVideoStories" => Stories::getAllVideoStories(), "allSliders" => Sliders::getAllSliders(), "allEvents" => $allEvents["allEvents"], "allMusicCount" => count($allMusicChart), "allMembersCount" => count(Members::getAllMembers())]);
 	}
 
 	public function addVideoStory() {

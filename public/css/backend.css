@@ -8,6 +8,7 @@
 	width: 20%; 
 	min-height: 100vh; 
 	overflow-y: scroll;
+	height: 100vh;
 }
 
 .backend-sidebar ul {

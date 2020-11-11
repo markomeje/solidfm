@@ -28,8 +28,10 @@
 <script src="<?= PUBLIC_URL; ?>/jquery/events.js" type="text/javascript"></script>
 <!-- music-->
 <script src="<?= PUBLIC_URL; ?>/jquery/music.js" type="text/javascript"></script>
+<!-- members-->
+<script src="<?= PUBLIC_URL; ?>/jquery/members.js" type="text/javascript"></script>
 <script type="text/javascript">
-	<?php $textareas = ["add-news-content" => ["height" => 300], "edit-news-content" => ["height" => 400]]; ?>
+	<?php $textareas = ["add-news-content" => ["height" => 300], "edit-news-content" => ["height" => 400], "add-member-biography" => ["height" => 300]]; ?>
 	<?php foreach($textareas as $area => $value): ?>
 		var areaInput = $('#<?= $area; ?>');
 		if (areaInput) {
@@ -45,6 +47,15 @@
 			editPackage.summernote({
 		        tabsize: 4,
 		        height: 300
+		    });
+		<?php endforeach; ?>
+    <?php endif; ?>
+    <?php if(isset($allMembers)): ?>
+		<?php foreach($allMembers as $member): ?>
+	        var editPackage = $('#edit-member-biography-<?= empty($member->id) ? 0 : $member->id; ?>');
+			editPackage.summernote({
+		        tabsize: 4,
+		        height: 400
 		    });
 		<?php endforeach; ?>
     <?php endif; ?>

@@ -7,6 +7,7 @@ use Application\Library\Authentication;
 
 
 class YoutubeController extends Controller {
+	
 
 	public function __construct() {
 		parent::__construct();
